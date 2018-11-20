@@ -1,0 +1,102 @@
+html {
+    font-size: 62.7%;
+}
+body {
+    font-size: 2rem;
+    color: white;
+    background: linear-gradient(300deg, #b10404, #ff7b00, #53121c);
+    background-size: 600% 600%;
+    animation: bombAnxiety 30s ease infinite;
+    // thanks to https://www.ianforrest.me/
+    @keyframes bombAnxiety {
+        0%{
+            background-position: 0% 50%;
+        }
+        50%  {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }   
+}
+
+main {
+    height: 100vh;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 50px 0;
+    border: 1px solid red;
+    // position: relative;
+    // display: flex;
+    // justify-content: center;
+    // align-content: center;
+}
+
+.game-details {
+    width: 25%;
+    border: 1px solid black;
+    height: 40vh;
+
+}
+.qa-container {
+    // text-align: center;
+    border: 1px solid black;
+    width: 25%;
+    height: 40vh;
+    padding: 0 25px;
+}
+
+h1 {
+    font-family: 'Rammetto One', cursive;
+    font-size: 4rem;
+}
+
+h3 {
+    // font-family: 'Stalinist One', cursive;
+    // font-family: 'Goblin One', cursive;
+    font-family: 'Rammetto One', cursive;
+    // font-family: 'Permanent Marker', cursive;
+    position: relative;
+    top: -35px;
+    left: 0;
+    font-size: 5rem;
+    // font-family: serif;
+    // font-style: italic;
+}
+p {
+    margin: 10px 0;
+}
+
+.user-answer-container {
+    border: 1px solid black;
+    width: 25%;
+}
+
+
+.bomb {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -100px;
+    left: -140px;
+    background: black;
+}
+
+
+
+
+// font-family: 'Stalinist One', cursive;
+// font-family: 'Erica One', cursive;
+// font-family: 'Goblin One', cursive;
+// font-family: 'Bungee Shade', cursive;
+// font-family: 'Rammetto One', cursive;
+// font-family: 'Permanent Marker', cursive;
+
