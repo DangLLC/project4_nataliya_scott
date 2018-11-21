@@ -54,6 +54,19 @@ bombApp.getTrivia = function () {
 };
 
 
+//timer script
+bombApp.seconds = 60;
+
+bombApp.countdown = window.setInterval(function () {
+    $('.seconds p').html(`${bombApp.seconds}`);
+    bombApp.seconds = bombApp.seconds - 1;
+
+    if (bombApp.seconds < 0) {
+        clearInterval(bombApp.countdown);
+    }
+}, 1000);
+
+
 // WEDNESDAY
 // -- For each RESULT in triviaResults object, return all question / answer sets. (SHOULD BE MORE THAN 1)
 // -- Present all questions/answers sets on diff divs on dom
