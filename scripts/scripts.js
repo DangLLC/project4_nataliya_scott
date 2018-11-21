@@ -49,40 +49,28 @@ bombApp.getTrivia = function () {
             $(`#qa${i} .question p`).html(bombApp.question);
 
             //randomize array
-            shuffleArray(bombApp.answerArray);
+            bombApp.shuffle(bombApp.answerArray);
 
+            // appending answers in inputs/labels, under each question. Answers are specific to each question due to questionID.
 
-            // bombApp.answerArray.forEach(function(answerObject, b) {
-            //     $(`#qa${i} .answer`).append(
-            //     `<div class="answerContainer">
-            //         <input type="radio" name="answer" id="answer"></input>
-            //         <label for="answer"> ${answerObject.answerOption}</label>
-            //     </div>`);
-            // });
-
-            // go through each input and label in each answer container and append a number onto the end
+            //  Each time forEach loops through, INDEX is increased by 1.
+            // " i " = index of the question / ANSWER OBJECT
+            // " index " = index of the answer in answer array / FOREACH LOOP
             bombApp.answerArray.forEach(function (answerObject, index) {
-                console.log(answerObject);
-                $(`#qa${i} .answerContainer`).append(`
-                    <input type="radio" name="answer" id="answer${index}"></input>
-                    <label for="answer${index}"> ${answerObject.answerOption}</label>`);
-            });
+                let questionID = `Q${i}A${index}`;
+                $(`#qa${i} .answerContainer`).append(
+                    `
+                    <input type="radio" name="Q${i}Answer" id="${questionID}"></input>
+                    <label for="${questionID}"> ${answerObject.answerOption}</label>
+                    `
+                );
+            }); // end answerArray forEach 
+        }) // end triviaResults forEach
+    }); // END THEN
+}; // END GETTRIVIA (AJAX)
 
-            // bombApp.answerArray.forEach(function (answer, i) {
-            //     $("input").attr('id', `answer${i}`);
-            //     $("label").attr('for', `answer${i}`);
-            // })
 
-
-            // for (let i = 0; i < 4; i++) {
-            //     $("input").attr('id', `answer${i}`);
-            // }
-
-        })
-    });
-};
-
-function shuffleArray(array) {
+bombApp.shuffle = function(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -104,10 +92,18 @@ bombApp.countdown = window.setInterval(function () {
 
 
 // WEDNESDAY
-// -- IMPORTANT: Make sure we can keep track of "correct" answer
-// -- On submit of all answers, capture userValues & compare w/ true/false?
+// -- On submit of all answers, capture userValues & compare w/ true/false? PUT IN DIV
+// -- Style form to look like form, hide radios
 
 
+
+
+// THURSDAY
+// --- Compare all correct answers to see if u win game
+// --- 
+// ---
+// ---
+// ---
 
 
 
@@ -119,7 +115,6 @@ bombApp.countdown = window.setInterval(function () {
 // if user does not select all correct answers, timer will continue but they can attempt again.
 // if answers are all correct, bomb defused -- user is presented with play again.
 // upon "play again" new quiz new random questions appear.
-// -- Add timer DONE DONE DONE
 
 
 
@@ -136,3 +131,6 @@ bombApp.countdown = window.setInterval(function () {
 // -- For each RESULT in triviaResults object, return all question / answer sets. (SHOULD BE MORE THAN 1) DONE DONE DONE DONE
 // -- Present all questions/answers sets on diff divs on dom DONE DONE DONE
 // -- Randomize answer array so last answer is not always the "correct" answer DONE DONE DONE
+// -- Add timer DONE DONE DONE
+// -- IMPORTANT: Make sure we can keep track of "correct" answer DONE DONE DONE
+// Make all answers relate to specific question DONE DONE
