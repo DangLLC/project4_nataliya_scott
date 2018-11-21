@@ -147,7 +147,7 @@ img {
 
 /* /END GENERAL STYLING */
 html {
-  font-size: 62.7%; }
+  font-size: 62.5%; }
 
 body {
   font-size: 2rem;
@@ -188,9 +188,7 @@ main {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -ms-flex-line-pack: center;
-  align-content: center; }
+  display: flex; }
 
 .game-details {
   width: 25%;
@@ -198,7 +196,6 @@ main {
   height: 40vh; }
 
 .qa-container {
-  text-align: center;
   border: 1px solid black;
   width: 25%;
   height: 40vh;
@@ -231,3 +228,46 @@ p {
   bottom: -100px;
   left: -140px;
   background: black; }
+
+.bomb::after {
+  content: '';
+  height: 100px;
+  width: 100px;
+  background: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.bomb::before {
+  content: '';
+  height: 80px;
+  width: 20px;
+  background: white;
+  position: absolute;
+  top: -50px;
+  right: -20px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.seconds {
+  position: absolute;
+  top: calc(50% - 60px);
+  right: calc(50% - 60px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.seconds p {
+  color: white;
+  font-size: 12rem;
+  margin: 0; }
