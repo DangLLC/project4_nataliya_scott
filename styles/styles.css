@@ -199,7 +199,9 @@ fieldset {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column; }
+  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
 
 .answer {
   display: -webkit-box;
@@ -209,6 +211,9 @@ fieldset {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
+
+input[type=submit] {
+  display: block; }
 
 .game-details {
   width: 20%;
