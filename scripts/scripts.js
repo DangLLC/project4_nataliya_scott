@@ -21,7 +21,7 @@ bombApp.getTrivia = function () {
 
 
         bombApp.triviaResults.forEach(function(result, i) {
-            
+            console.log(i, 'hello');
             //creating variable to store the question, correct answer and incorrect answers from the bombApp.triviaResults object
             bombApp.question = result.question;
                 console.log(bombApp.question);
@@ -52,13 +52,32 @@ bombApp.getTrivia = function () {
             shuffleArray(bombApp.answerArray);
 
 
-            bombApp.answerArray.forEach(function(answerObject) {
-                $(`#qa${i} .answer`).append(`
-                <div class="answerContainer">
-                <input type="radio" name="answer" id="answer${i}"></input>
-                <label for="answer${i}"> ${answerObject.answerOption}</label>
-                </div>`);
+            // bombApp.answerArray.forEach(function(answerObject, b) {
+            //     $(`#qa${i} .answer`).append(
+            //     `<div class="answerContainer">
+            //         <input type="radio" name="answer" id="answer"></input>
+            //         <label for="answer"> ${answerObject.answerOption}</label>
+            //     </div>`);
+            // });
+
+            // go through each input and label in each answer container and append a number onto the end
+            bombApp.answerArray.forEach(function (answerObject, index) {
+                console.log(answerObject);
+                $(`#qa${i} .answerContainer`).append(`
+                    <input type="radio" name="answer" id="answer${index}"></input>
+                    <label for="answer${index}"> ${answerObject.answerOption}</label>`);
             });
+
+            // bombApp.answerArray.forEach(function (answer, i) {
+            //     $("input").attr('id', `answer${i}`);
+            //     $("label").attr('for', `answer${i}`);
+            // })
+
+
+            // for (let i = 0; i < 4; i++) {
+            //     $("input").attr('id', `answer${i}`);
+            // }
+
         })
     });
 };
