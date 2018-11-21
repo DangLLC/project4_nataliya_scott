@@ -8,12 +8,13 @@ const bombApp = {};
 
 bombApp.getTrivia = function () {
     $.ajax({
-        url: 'https://opentdb.com/api.php?amount=5&category=27&difficulty=easy&type=multiple',
+        url: 'https://opentdb.com/api.php?amount=25&difficulty=easy&type=multiple',
         method: 'GET'
     }).then(res => {
         // console.log(res);
         // console.log(res.results);
         bombApp.triviaResults = res.results;
+        console.log(bombApp.triviaResults);
         
         //forEach item in the array bombApp.triviaResults 
         //set these variables based on each item in the array
@@ -21,6 +22,7 @@ bombApp.getTrivia = function () {
 
         bombApp.triviaResults.forEach(function(result, i) {
             
+            //creating variable to store the question, correct answer and incorrect answers from the bombApp.triviaResults object
             bombApp.question = result.question;
                 console.log(bombApp.question);
             bombApp.correctAnswer = result.correct_answer;
@@ -28,6 +30,7 @@ bombApp.getTrivia = function () {
             bombApp.incorrectAnswers = result.incorrect_answers;
                 console.log(bombApp.incorrectAnswers);
         
+            //mapping through the inccorect answers to create a new array that has each answer with an object (that includes the answer options and whether they are correct or not)
             bombApp.answerArray = bombApp.incorrectAnswers.map(function (answer) {
                 return {
                     "answerOption": answer,
@@ -35,6 +38,7 @@ bombApp.getTrivia = function () {
                 }
             })
 
+            //we are pushing the correct answer to the answer array so we have one complete answer array.
             bombApp.answerArray.push(
                 {
                     "answerOption": bombApp.correctAnswer,
@@ -42,12 +46,16 @@ bombApp.getTrivia = function () {
                 }
             )      
 
-            $("#qa${} .question p").html(bombApp.question);
+            $(`#qa${i} .question p`).html(bombApp.question);
 
             //randomize array
 
             bombApp.answerArray.forEach(function(answerObject) {
-                $(`#qa${i} answer p`).append(`<li> ${answerObject.answerOption} </li>`);
+                $(`#qa${i} .answer ul`).append(`<li> ${answerObject.answerOption} </li>`);
+
+            if (`bombApp.answerArray${i}.correct` === true) {
+                $('.answer li').addClass('correctColor');
+            }
             });
         })
     });
@@ -55,7 +63,7 @@ bombApp.getTrivia = function () {
 
 
 //timer script
-bombApp.seconds = 60;
+bombApp.seconds = 0;
 
 bombApp.countdown = window.setInterval(function () {
     $('.seconds p').html(`${bombApp.seconds}`);
@@ -72,9 +80,6 @@ bombApp.countdown = window.setInterval(function () {
 // -- Randomize answer array so last answer is not always the "correct" answer
 // -- IMPORTANT: Make sure we can keep track of "correct" answer
 // -- On submit of all answers, capture userValues & compare w/ true/false?
-// -- For each RESULT in triviaResults object, return all question / answer sets. (SHOULD BE MORE THAN 1)
-// -- Present all questions/answers sets on diff divs on dom
-// -- Add timer
 
 
 
@@ -88,6 +93,7 @@ bombApp.countdown = window.setInterval(function () {
 // if user does not select all correct answers, timer will continue but they can attempt again.
 // if answers are all correct, bomb defused -- user is presented with play again.
 // upon "play again" new quiz new random questions appear.
+// -- Add timer DONE DONE DONE
 
 
 
