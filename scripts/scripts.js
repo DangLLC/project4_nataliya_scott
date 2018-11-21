@@ -49,17 +49,26 @@ bombApp.getTrivia = function () {
             $(`#qa${i} .question p`).html(bombApp.question);
 
             //randomize array
+            shuffleArray(bombApp.answerArray);
+
 
             bombApp.answerArray.forEach(function(answerObject) {
-                $(`#qa${i} .answer ul`).append(`<li> ${answerObject.answerOption} </li>`);
-
-            if (`bombApp.answerArray${i}.correct` === true) {
-                $('.answer li').addClass('correctColor');
-            }
+                $(`#qa${i} .answer`).append(`
+                <div class="answerContainer">
+                <input type="radio" name="answer" id="answer${i}"></input>
+                <label for="answer${i}"> ${answerObject.answerOption}</label>
+                </div>`);
             });
         })
     });
 };
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 
 
 //timer script
@@ -76,9 +85,6 @@ bombApp.countdown = window.setInterval(function () {
 
 
 // WEDNESDAY
-// -- For each RESULT in triviaResults object, return all question / answer sets. (SHOULD BE MORE THAN 1)
-// -- Present all questions/answers sets on diff divs on dom
-// -- Randomize answer array so last answer is not always the "correct" answer
 // -- IMPORTANT: Make sure we can keep track of "correct" answer
 // -- On submit of all answers, capture userValues & compare w/ true/false?
 
@@ -101,10 +107,13 @@ bombApp.countdown = window.setInterval(function () {
 
 
 //  WE ARE AWESOME
-    // sayCorrectAnswer(bombApp.correctAnswer);
-    //map through the incorrect array DONE DONE DONE
-    //for each incorrect option, turn it into an object with the key value answer option DONE DONE DONE
-    //give each of those options correct: false DONE DONE DONE
-    //push the correct answer to this array DONE DONE DONE
-    //give that one correct: true DONE DONE DONE 
-    // PUT QUESTIONS AND ANSWERS ON DOM DONE DONE DONE DONE DONE
+// sayCorrectAnswer(bombApp.correctAnswer);
+//map through the incorrect array DONE DONE DONE
+//for each incorrect option, turn it into an object with the key value answer option DONE DONE DONE
+//give each of those options correct: false DONE DONE DONE
+//push the correct answer to this array DONE DONE DONE
+//give that one correct: true DONE DONE DONE 
+// PUT QUESTIONS AND ANSWERS ON DOM DONE DONE DONE DONE DONE
+// -- For each RESULT in triviaResults object, return all question / answer sets. (SHOULD BE MORE THAN 1) DONE DONE DONE DONE
+// -- Present all questions/answers sets on diff divs on dom DONE DONE DONE
+// -- Randomize answer array so last answer is not always the "correct" answer DONE DONE DONE
