@@ -68,11 +68,12 @@ bombApp.countdown = window.setInterval(function () {
 
 
 // WEDNESDAY
-// -- For each RESULT in triviaResults object, return all question / answer sets. (SHOULD BE MORE THAN 1)
-// -- Present all questions/answers sets on diff divs on dom
+
 // -- Randomize answer array so last answer is not always the "correct" answer
 // -- IMPORTANT: Make sure we can keep track of "correct" answer
 // -- On submit of all answers, capture userValues & compare w/ true/false?
+// -- For each RESULT in triviaResults object, return all question / answer sets. (SHOULD BE MORE THAN 1)
+// -- Present all questions/answers sets on diff divs on dom
 // -- Add timer
 
 
@@ -100,3 +101,5 @@ bombApp.countdown = window.setInterval(function () {
     //push the correct answer to this array DONE DONE DONE
     //give that one correct: true DONE DONE DONE 
     // PUT QUESTIONS AND ANSWERS ON DOM DONE DONE DONE DONE DONE
+
+    
