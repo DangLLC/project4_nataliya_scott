@@ -211,6 +211,9 @@ h3 {
 p {
   margin: 10px 0; }
 
+.hide {
+  display: none; }
+
 form {
   border: 2px solid white;
   display: -webkit-box;
@@ -436,3 +439,19 @@ form {
   100% {
     -webkit-transform: scale(1);
     transform: scale(1); } }
+
+.modal {
+  width: 75vw;
+  height: 75vh;
+  padding: 25px;
+  background: white;
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  border: 5px solid black;
+  color: black;
+  text-align: center; }
