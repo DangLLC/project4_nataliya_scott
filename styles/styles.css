@@ -145,6 +145,19 @@ img {
   max-width: 100%;
   display: block; }
 
+.visuallyhidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0);
+  overflow: hidden; }
+
 /* /END GENERAL STYLING */
 html {
   font-size: 62.5%; }
@@ -184,62 +197,36 @@ main {
   margin: 0 auto;
   height: 100%;
   padding: 50px 0;
-  border: 1px solid red;
-  position: relative; }
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
 
 form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-fieldset {
+  border: 2px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
+  form .qa-fieldset {
+    width: 33%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border: 1px solid yellow; }
 
-.answer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column; }
-
-input[type=submit] {
-  display: block; }
-
-.game-details {
-  width: 20%;
-  border: 1px solid black;
-  height: 40vh; }
-
-.qa-container {
-  border: 1px solid black;
-  width: 20%;
-  padding: 0 25px; }
-
-h1 {
-  font-family: 'Rammetto One', cursive;
-  font-size: 4rem; }
-
-h3 {
-  font-family: 'Rammetto One', cursive;
-  position: relative;
-  top: -35px;
-  left: 0;
-  font-size: 5rem; }
-
-p {
-  margin: 10px 0; }
-
-.answer-container {
+.answers-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,8 +238,33 @@ p {
   -ms-flex-align: start;
   align-items: flex-start; }
 
-.correctColor {
-  color: purple; }
+.input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+  .input-container label {
+    width: 100%; }
+  .input-container input[type=submit] {
+    display: block; }
+
+.game-details {
+  width: 20%;
+  border: 1px solid black;
+  height: 40vh; }
+
+h1 {
+  font-family: 'Rammetto One', cursive;
+  font-size: 4rem; }
+
+h3 {
+  font-family: 'Rammetto One', cursive;
+  position: relative;
+  left: 0;
+  font-size: 5rem; }
+
+p {
+  margin: 10px 0; }
 
 .bomb {
   width: 500px;

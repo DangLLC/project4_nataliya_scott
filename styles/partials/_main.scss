@@ -31,44 +31,54 @@ main {
     margin: 0 auto;
     height: 100%;
     padding: 50px 0;
-    border: 1px solid red;
     position: relative;
-    // justify-content: center;
-    // align-content: center;
+    display: flex;
+    justify-content: flex-end;
 }
 
 form {
+    border: 2px solid white;
     display: flex;
-}
-
-fieldset {
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     flex-wrap: wrap;
+    .qa-fieldset {
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid yellow;
+    }
 }
 
-.answer {
+.answers-container {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
-input[type=submit] {
-    display: block;
+.input-container {
+    display: flex;
+    width: 100%;
+    input {
+        // display:none;
+    }
+    label {
+        // border: 1px solid black;
+        width: 100%;
+    }
+    input[type=submit] {
+        display: block;
+    }
 }
 
+// input[type=radio]::checked label {
+//         border: 1px solid green;
+// }
 
 .game-details {
     width: 20%;
     border: 1px solid black;
     height: 40vh;
 
-}
-.qa-container {
-    // text-align: center;
-    border: 1px solid black;
-    width: 20%;
-    // height: 40vh;
-    padding: 0 25px;
 }
 
 h1 {
@@ -82,24 +92,12 @@ h3 {
     font-family: 'Rammetto One', cursive;
     // font-family: 'Permanent Marker', cursive;
     position: relative;
-    top: -35px;
+    // top: -25px;
     left: 0;
     font-size: 5rem;
 }
 p {
     margin: 10px 0;
-}
-
-
-.answer-container {
-    // border: 5px solid black;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.correctColor {
-    color: purple;
 }
 
 .bomb {
