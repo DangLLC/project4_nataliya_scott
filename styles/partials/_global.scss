@@ -1,0 +1,62 @@
+//Global styles
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 2rem;
+    color: white;
+    background: linear-gradient(300deg, #b10404, #ff7b00, #53121c);
+    background-size: 600% 600%;
+    animation: bombAnxiety 30s ease infinite;
+    // thanks to https://www.ianforrest.me/
+    @keyframes bombAnxiety {
+        0%{
+            background-position: 0% 50%;
+        }
+        50%  {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }   
+}
+
+main {
+    height: 100vh;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 50px 0;
+    // position: relative;
+    // display: flex;
+    // justify-content: flex-end;
+}
+
+h1 {
+    font-family: 'Rammetto One', cursive;
+    font-size: 4rem;
+}
+
+h3 {
+    // font-family: 'Stalinist One', cursive;
+    // font-family: 'Goblin One', cursive;
+    font-family: 'Rammetto One', cursive;
+    // font-family: 'Permanent Marker', cursive;
+    position: relative;
+    // top: -25px;
+    left: 0;
+    font-size: 5rem;
+}
+p {
+    margin: 10px 0;
+}
+
+.hide {
+    display: none;
+}

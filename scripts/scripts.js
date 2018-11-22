@@ -1,33 +1,58 @@
+const bombApp = {};
+
+
 $(function() {
-    // console.log("Doc Ready");
-    bombApp.getTrivia();
+    bombApp.init();
 });
 
-const bombApp = {};
+bombApp.init = function() {
+    bombApp.getTrivia();
+    bombApp.modal()
+};
+
+
+bombApp.modal = function() {
+    $(".modal button").on("click", function() {
+        $(".modal").addClass("hide");
+    
+        //timer script
+        bombApp.seconds = 17;
+    
+        bombApp.countdown = window.setInterval(function () {
+            $('.seconds p').html(`${bombApp.seconds}`);
+            bombApp.seconds = bombApp.seconds - 1;
+
+            if (bombApp.seconds < 15) {
+                $('.bomb').addClass('bomb-slow-shake');
+            }
+
+            if (bombApp.seconds < 0) {
+                clearInterval(bombApp.countdown);
+                $('.bomb').removeClass('bomb-slow-shake');
+            }
+        }, 1000);
+    })
+}
+
+
+
 
 bombApp.getTrivia = function () {
     $.ajax({
         url: 'https://opentdb.com/api.php?amount=25&difficulty=easy&type=multiple',
         method: 'GET'
     }).then(res => {
-        // console.log(res);
-        // console.log(res.results);
         bombApp.triviaResults = res.results;
-        // console.log(bombApp.triviaResults);
         
+
         //forEach item in the array bombApp.triviaResults 
         //set these variables based on each item in the array
-
-
         bombApp.triviaResults.forEach(function(result, i) {
             // console.log(i, 'hello');
             //creating variable to store the question, correct answer and incorrect answers from the bombApp.triviaResults object
             bombApp.question = result.question;
-                // console.log(bombApp.question);
             bombApp.correctAnswer = result.correct_answer;
-                // console.log(bombApp.correctAnswer);
             bombApp.incorrectAnswers = result.incorrect_answers;
-                // console.log(bombApp.incorrectAnswers);
         
             //mapping through the inccorect answers to create a new array that has each answer with an object (that includes the answer options and whether they are correct or not)
             bombApp.answerArray = bombApp.incorrectAnswers.map(function (answer) {
@@ -88,7 +113,7 @@ $("form").on("submit", function(event) {
     const userAnswer5 = $("input[name=Q4Answer]:checked").val();
     const userAnswer6 = $("input[name=Q5Answer]:checked").val();
 
-    console.log(userAnswer1, userAnswer2, userAnswer3, userAnswer4, userAnswer5);
+    console.log(userAnswer1, userAnswer2, userAnswer3, userAnswer4, userAnswer5, userAnswer6);
 
     if (userAnswer1 === "true" &&
         userAnswer2 === "true" &&
@@ -111,46 +136,14 @@ $("form").on("submit", function(event) {
 
 
 
-
-
-
-
-//timer script
-bombApp.seconds = 17;
-
-bombApp.countdown = window.setInterval(function () {
-    $('.seconds p').html(`${bombApp.seconds}`);
-    bombApp.seconds = bombApp.seconds - 1;
-
-    if(bombApp.seconds < 15) {
-        $('.bomb').addClass('bomb-slow-shake');
-    }
-
-    //this one isn't working. need to figure out how to remove the slow shake and replace with fast
-    // if(bombApp.seconds < 5) {
-    //     $('.bomb').removeClass('bomb-slow-shake');
-    //     $('.bomb').addClass('bomb-fast-shake');
-    // }
-
-    if (bombApp.seconds < 0) {
-        clearInterval(bombApp.countdown);
-    }
-}, 1000);
-
-
 // WEDNESDAY
-// -- On submit of all answers, capture userValues & compare w/ true/false? PUT IN DIV
-// -- Style form to look like form, hide radios
+// // figure out lock thing -- is there a lock? is there a place where A/B/C/D shows up?
+// start of game modal
+// what happens when someone wins / loses
+// design decisions 
 
 
 
-
-// THURSDAY
-// --- Compare all correct answers to see if u win game
-// --- 
-// ---
-// ---
-// ---
 
 
 
@@ -181,14 +174,12 @@ bombApp.countdown = window.setInterval(function () {
 // -- Add timer DONE DONE DONE
 // -- IMPORTANT: Make sure we can keep track of "correct" answer DONE DONE DONE
 // Make all answers relate to specific question DONE DONE
-
-
-//when the user submits the form with all of their answers  DONE
-//prevent form default DONE
-
-//store the value of the checked input and store these into a variable DONE
-
-// compare variables of the checked inputs with the correct answers (if all inputs are true, then the user wins the game) DONE
+//when the user submits the form with all of their answers  DONE DONE
+//prevent form default DONE DONE
+//store the value of the checked input and store these into a variable DONE DONE
+// compare variables of the checked inputs with the correct answers (if all inputs are true, then the user wins the game) DONE DONE
+// -- Style form to look like form, hide radios DONE DONE
+// --- Compare all correct answers to see if u win game DONE DONE
 
 
 
