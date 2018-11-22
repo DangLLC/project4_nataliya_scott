@@ -5,11 +5,11 @@ $(function() {
 });
 
 bombApp.init = function() {
-    bombApp.modal()
+    bombApp.modal();
 };
 
 bombApp.modal = function() {
-    $(".modal button").on("click", function() {
+    $(".modal .start-button").on("click", function() {
         $(".modal").addClass("hide");
         // on click of modal button, capture values of CATEGORY and DIFFICULTY into variables
         const categoryNumber = $("#category option:selected").val();
@@ -21,16 +21,21 @@ bombApp.modal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 17;
+    bombApp.seconds = 15;
     bombApp.countdown = window.setInterval(function () {
-        $('.seconds p').html(`${bombApp.seconds}`);
+        $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
         if (bombApp.seconds < 15) {
-            $('.bomb').addClass('bomb-slow-shake');
+            $(".bomb").addClass("bomb-slow-shake");
+        }
+        if (bombApp.seconds < 9) {
+            $(".bomb p").prepend("0");
         }
         if (bombApp.seconds < 0) {
             clearInterval(bombApp.countdown);
-            $('.bomb').removeClass('bomb-slow-shake');
+            $(".bomb").removeClass("bomb-slow-shake");
+            $(".losing-modal").removeClass("hide");
+            // $(".input-container").empty();
         }
     }, 1000);
 }
@@ -38,7 +43,7 @@ bombApp.timer = function() {
 bombApp.getTrivia = function(categoryNumber, difficulty) {
     $.ajax({
         url: `https://opentdb.com/api.php?amount=25&category=${categoryNumber}&difficulty=${difficulty}&type=multiple`,
-        method: 'GET'
+        method: "GET"
     }).then(res => {
         bombApp.triviaResults = res.results;
         //forEach item in the array bombApp.triviaResults 
@@ -114,12 +119,37 @@ $("form").on("submit", function(event) {
         userAnswer5 === "true" &&
         userAnswer6 === "true") 
         {
-            console.log("YOU WIN");
+            $(".winning-modal").removeClass("hide");
+            clearInterval(bombApp.countdown);
+            // $(".input-container").empty();
+        } else if (
+        userAnswer1 === undefined ||
+        userAnswer2 === undefined ||
+        userAnswer3 === undefined ||
+        userAnswer4 === undefined ||
+        userAnswer5 === undefined ||
+        userAnswer6 === undefined) 
+        {
+            $(".incomplete-form-modal").removeClass("hide");
         } else {
-            console.log("YOU LOSE");
+            $(".try-again-modal").removeClass("hide");
         }
-})
+});
+    
+$(".try-again-button").on("click", function(){
+    $(".try-again-modal").addClass("hide");
+});
 
+$(".try-again-button").on("click", function () {
+    $(".incomplete-form-modal").addClass("hide");
+});
+
+$(".play-again-button").on("click", function(){
+    $(".losing-modal").addClass("hide");
+    $(`.question p`).empty();
+    $(`.answers-container`).empty();
+    $(".start-modal").removeClass("hide");
+});
 
 
 
