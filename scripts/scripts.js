@@ -21,12 +21,15 @@ bombApp.modal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 1;
+    bombApp.seconds = 15;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
         if (bombApp.seconds < 15) {
             $(".bomb").addClass("bomb-slow-shake");
+        }
+        if (bombApp.seconds < 9) {
+            $(".bomb p").prepend("0");
         }
         if (bombApp.seconds < 0) {
             clearInterval(bombApp.countdown);
@@ -119,6 +122,15 @@ $("form").on("submit", function(event) {
             $(".winning-modal").removeClass("hide");
             clearInterval(bombApp.countdown);
             // $(".input-container").empty();
+        } else if (
+        userAnswer1 === undefined ||
+        userAnswer2 === undefined ||
+        userAnswer3 === undefined ||
+        userAnswer4 === undefined ||
+        userAnswer5 === undefined ||
+        userAnswer6 === undefined) 
+        {
+            $(".incomplete-form-modal").removeClass("hide");
         } else {
             $(".try-again-modal").removeClass("hide");
         }
@@ -126,6 +138,10 @@ $("form").on("submit", function(event) {
     
 $(".try-again-button").on("click", function(){
     $(".try-again-modal").addClass("hide");
+});
+
+$(".try-again-button").on("click", function () {
+    $(".incomplete-form-modal").addClass("hide");
 });
 
 $(".play-again-button").on("click", function(){
