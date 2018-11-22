@@ -116,11 +116,21 @@ $("form").on("submit", function(event) {
 
 
 //timer script
-bombApp.seconds = 60;
+bombApp.seconds = 17;
 
 bombApp.countdown = window.setInterval(function () {
     $('.seconds p').html(`${bombApp.seconds}`);
     bombApp.seconds = bombApp.seconds - 1;
+
+    if(bombApp.seconds < 15) {
+        $('.bomb').addClass('bomb-slow-shake');
+    }
+
+    //this one isn't working. need to figure out how to remove the slow shake and replace with fast
+    // if(bombApp.seconds < 5) {
+    //     $('.bomb').removeClass('bomb-slow-shake');
+    //     $('.bomb').addClass('bomb-fast-shake');
+    // }
 
     if (bombApp.seconds < 0) {
         clearInterval(bombApp.countdown);
