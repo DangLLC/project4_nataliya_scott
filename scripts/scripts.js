@@ -14,27 +14,27 @@ bombApp.getTrivia = function () {
         // console.log(res);
         // console.log(res.results);
         bombApp.triviaResults = res.results;
-        console.log(bombApp.triviaResults);
+        // console.log(bombApp.triviaResults);
         
         //forEach item in the array bombApp.triviaResults 
         //set these variables based on each item in the array
 
 
         bombApp.triviaResults.forEach(function(result, i) {
-            console.log(i, 'hello');
+            // console.log(i, 'hello');
             //creating variable to store the question, correct answer and incorrect answers from the bombApp.triviaResults object
             bombApp.question = result.question;
-                console.log(bombApp.question);
+                // console.log(bombApp.question);
             bombApp.correctAnswer = result.correct_answer;
-                console.log(bombApp.correctAnswer);
+                // console.log(bombApp.correctAnswer);
             bombApp.incorrectAnswers = result.incorrect_answers;
-                console.log(bombApp.incorrectAnswers);
+                // console.log(bombApp.incorrectAnswers);
         
             //mapping through the inccorect answers to create a new array that has each answer with an object (that includes the answer options and whether they are correct or not)
             bombApp.answerArray = bombApp.incorrectAnswers.map(function (answer) {
                 return {
                     "answerOption": answer,
-                    "Correct": false
+                    "correct": false
                 }
             })
 
@@ -42,7 +42,7 @@ bombApp.getTrivia = function () {
             bombApp.answerArray.push(
                 {
                     "answerOption": bombApp.correctAnswer,
-                    "Correct": true
+                    "correct": true
                 }
             )      
 
@@ -57,18 +57,19 @@ bombApp.getTrivia = function () {
             // " i " = index of the question / ANSWER OBJECT
             // " index " = index of the answer in answer array / FOREACH LOOP
             bombApp.answerArray.forEach(function (answerObject, index) {
+                // console.log(bombApp.answerArray[i].correct);
                 let questionID = `Q${i}A${index}`;
-                $(`#qa${i} .answerContainer`).append(
+                $(`#qa${i} .answer-container`).append(
                     `
-                    <input type="radio" name="Q${i}Answer" id="${questionID}"></input>
+                    <input type="radio" name="Q${i}Answer" id="${questionID}" value="${bombApp.answerArray[index].correct}"></input>
                     <label for="${questionID}"> ${answerObject.answerOption}</label>
                     `
                 );
+                // console.log(bombApp.answerArray[3].correct);
             }); // end answerArray forEach 
         }) // end triviaResults forEach
     }); // END THEN
 }; // END GETTRIVIA (AJAX)
-
 
 bombApp.shuffle = function(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -77,9 +78,42 @@ bombApp.shuffle = function(array) {
     }
 }
 
+$("form").on("submit", function(event) {
+    event.preventDefault();
+    const userAnswer1 = $("input[name=Q0Answer]:checked").val();
+    const userAnswer2 = $("input[name=Q1Answer]:checked").val();
+    const userAnswer3 = $("input[name=Q2Answer]:checked").val();
+    const userAnswer4 = $("input[name=Q3Answer]:checked").val();
+    const userAnswer5 = $("input[name=Q4Answer]:checked").val();
+
+    console.log(userAnswer1, userAnswer2, userAnswer3, userAnswer4, userAnswer5);
+
+    if (userAnswer1 === "true" &&
+        userAnswer2 === "true" &&
+        userAnswer3 === "true" &&
+        userAnswer4 === "true" &&
+        userAnswer5 === "true") 
+        {
+            console.log("YOU WIN");
+        } else {
+            console.log("YOU LOSE");
+        }
+})
+
+
+
+// compare variables of the checked inputs with the correct answers (if all inputs are true, then the user wins the game)
+// (double check that all answers are selected)
+// display choice in lock???
+
+
+
+
+
+
 
 //timer script
-bombApp.seconds = 0;
+bombApp.seconds = 60;
 
 bombApp.countdown = window.setInterval(function () {
     $('.seconds p').html(`${bombApp.seconds}`);
@@ -134,3 +168,9 @@ bombApp.countdown = window.setInterval(function () {
 // -- Add timer DONE DONE DONE
 // -- IMPORTANT: Make sure we can keep track of "correct" answer DONE DONE DONE
 // Make all answers relate to specific question DONE DONE
+
+
+//when the user submits the form with all of their answers  DONE
+//prevent form default DONE
+
+//store the value of the checked input and store these into a variable DONE
