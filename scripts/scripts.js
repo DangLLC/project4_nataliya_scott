@@ -1,7 +1,6 @@
 $(function() {
     // console.log("Doc Ready");
     bombApp.getTrivia();
-
 });
 
 const bombApp = {};
@@ -59,10 +58,12 @@ bombApp.getTrivia = function () {
             bombApp.answerArray.forEach(function (answerObject, index) {
                 // console.log(bombApp.answerArray[i].correct);
                 let questionID = `Q${i}A${index}`;
-                $(`#qa${i} .answer-container`).append(
+                $(`#qa${i} .answers-container`).append(
                     `
-                    <input type="radio" name="Q${i}Answer" id="${questionID}" value="${bombApp.answerArray[index].correct}"></input>
-                    <label for="${questionID}"> ${answerObject.answerOption}</label>
+                    <div class="input-container">
+                        <input type="radio" name="Q${i}Answer" id="${questionID}" value="${bombApp.answerArray[index].correct}"></input>
+                        <label for="${questionID}"> ${answerObject.answerOption}</label>
+                    </div>
                     `
                 );
                 // console.log(bombApp.answerArray[3].correct);
@@ -85,6 +86,7 @@ $("form").on("submit", function(event) {
     const userAnswer3 = $("input[name=Q2Answer]:checked").val();
     const userAnswer4 = $("input[name=Q3Answer]:checked").val();
     const userAnswer5 = $("input[name=Q4Answer]:checked").val();
+    const userAnswer6 = $("input[name=Q5Answer]:checked").val();
 
     console.log(userAnswer1, userAnswer2, userAnswer3, userAnswer4, userAnswer5);
 
@@ -92,7 +94,8 @@ $("form").on("submit", function(event) {
         userAnswer2 === "true" &&
         userAnswer3 === "true" &&
         userAnswer4 === "true" &&
-        userAnswer5 === "true") 
+        userAnswer5 === "true" &&
+        userAnswer6 === "true") 
         {
             console.log("YOU WIN");
         } else {
@@ -102,7 +105,7 @@ $("form").on("submit", function(event) {
 
 
 
-// compare variables of the checked inputs with the correct answers (if all inputs are true, then the user wins the game)
+
 // (double check that all answers are selected)
 // display choice in lock???
 
@@ -174,3 +177,19 @@ bombApp.countdown = window.setInterval(function () {
 //prevent form default DONE
 
 //store the value of the checked input and store these into a variable DONE
+
+// compare variables of the checked inputs with the correct answers (if all inputs are true, then the user wins the game) DONE
+
+
+
+// 2 attempts
+// represented by 2 heart halves.
+// if you fail 1, 1 heart half breaks off or disappears
+
+// // RULES:
+// you get 2-3 attempts
+// answer everything
+// get everything right
+// do it all before timer runs out
+
+// modal on page load with instructions, rules, start-game button
