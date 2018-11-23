@@ -21,7 +21,7 @@ bombApp.modal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 60;
+    bombApp.seconds = 100;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -34,7 +34,12 @@ bombApp.timer = function() {
         if (bombApp.seconds < 0) {
             clearInterval(bombApp.countdown);
             $(".bomb").removeClass("bomb-slow-shake");
+            $(".bomb").addClass("bomb-explode");
+            setTimeout(function () {
+                $(".bomb").removeClass("bomb-explode");
+            }, 2000);
             $(".losing-modal").removeClass("hide");
+            // $(".bomb-container").addClass("hide");
         }
     }, 1000);
 }
@@ -204,6 +209,7 @@ $(".play-again-button").on("click", function(){
 // start of game modal
 // what happens when someone wins / loses
 // seconds capture is not accurate DONE DONE
+// EXPLOSIONNNNNNNNNN done done done DONE
 
 
 

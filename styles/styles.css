@@ -373,6 +373,10 @@ form .hidden {
   -webkit-animation: shake 2s infinite;
   animation: shake 2s infinite; }
 
+.bomb-explode {
+  -webkit-animation: explode .6s;
+  animation: explode .6s; }
+
 .seconds {
   position: absolute;
   top: 25%;
@@ -510,6 +514,38 @@ form .hidden {
   100% {
     -webkit-transform: scale(1);
     transform: scale(1); } }
+
+@-webkit-keyframes explode {
+  0% {
+    -webkit-transform: scale(0.85);
+    transform: scale(0.85); }
+  20% {
+    background: red; }
+  40% {
+    background: yellow; }
+  60% {
+    background: orange; }
+  80% {
+    background: red; }
+  100% {
+    -webkit-transform: scale(10);
+    transform: scale(10); } }
+
+@keyframes explode {
+  0% {
+    -webkit-transform: scale(0.85);
+    transform: scale(0.85); }
+  20% {
+    background: red; }
+  40% {
+    background: yellow; }
+  60% {
+    background: orange; }
+  80% {
+    background: red; }
+  100% {
+    -webkit-transform: scale(10);
+    transform: scale(10); } }
 
 .modal {
   width: 75vw;
