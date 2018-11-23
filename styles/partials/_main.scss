@@ -5,38 +5,68 @@ form {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 85%;
     .qa-fieldset {
-        width: 33%;
+        margin: 0 15px;
+        padding: 10px;
+        width: calc(50% - 30px);
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         border: 1px solid yellow;
+        border:none;
+        position: relative;
     }
 }
 
 .answers-container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
+
+.submit {
+    // border: 1px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
 .input-container {
     display: flex;
-    width: 100%;
+    width: 50%;
+    // border: 1px solid orchid;
     input {
-        // display:none;
+        display:none;
     }
     label {
-        // border: 1px solid black;
+        border: 1px solid black;
+        padding: 10px;
+        margin: 5px;
         width: 100%;
-    }
-    input[type=submit] {
-        display: block;
+        background-color: floralwhite;
+        box-shadow: 5px 5px black;
     }
 }
 
-// input[type=radio]::checked label {
-//         border: 1px solid green;
-// }
+input[type=submit] {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    color: floralwhite;
+    font-weight: bold;
+    border: 2px solid black;
+    box-shadow: 5px 5px floralwhite;
+    background-color: black;
+    margin: 0 10px;
+
+
+}
+
+input[type=radio]:selected label {
+        border: 1px solid green;
+}
 
 .game-details {
     width: 20%;
