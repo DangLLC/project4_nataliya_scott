@@ -21,7 +21,7 @@ bombApp.modal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 100;
+    bombApp.seconds = 1000;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -50,6 +50,9 @@ bombApp.getTrivia = function(categoryNumber, difficulty) {
         method: "GET"
     }).then(res => {
         bombApp.triviaResults = res.results;
+        bombApp.shuffle(bombApp.triviaResults);
+        console.log(bombApp.triviaResults);
+
         //forEach item in the array bombApp.triviaResults 
         //set these variables based on each item in the array
         bombApp.triviaResults.forEach(function(result, i) {
@@ -110,38 +113,39 @@ bombApp.questionCount = 0;
 $(".answers-container").on("click", "input", function() {
     const userAnswer = $(`input[name=Q${bombApp.questionCount}Answer]:checked`).val();
     if (userAnswer === "true") {
-
         bombApp.questionCount++;
-
         $(`#qa${bombApp.questionCount}`).removeClass("hidden");
-
         $("html, body").animate(
             {
                 scrollTop: $(`#qa${bombApp.questionCount}`).offset().top
             },
             1000);
     }
+
+    // if (userAnswer6 === "true") {
+    //     $(".submit").removeClass("hide");
+    // }
 });
     
-
 
 // when user clicks "defuse bomb"j, store all their answers into variables
 $("form").on("submit", function(event) {
     event.preventDefault();
-    const userAnswer1 = $("input[name=Q0Answer]:checked").val();
-    const userAnswer2 = $("input[name=Q1Answer]:checked").val();
-    const userAnswer3 = $("input[name=Q2Answer]:checked").val();
-    const userAnswer4 = $("input[name=Q3Answer]:checked").val();
-    const userAnswer5 = $("input[name=Q4Answer]:checked").val();
+    // const userAnswer1 = $("input[name=Q0Answer]:checked").val();
+    // const userAnswer2 = $("input[name=Q1Answer]:checked").val();
+    // const userAnswer3 = $("input[name=Q2Answer]:checked").val();
+    // const userAnswer4 = $("input[name=Q3Answer]:checked").val();
+    // const userAnswer5 = $("input[name=Q4Answer]:checked").val();
     const userAnswer6 = $("input[name=Q5Answer]:checked").val();
 
     console.log(userAnswer1, userAnswer2, userAnswer3, userAnswer4, userAnswer5, userAnswer6);
     // check if answers are correct / if they won
-    if (userAnswer1 === "true" &&
-        userAnswer2 === "true" &&
-        userAnswer3 === "true" &&
-        userAnswer4 === "true" &&
-        userAnswer5 === "true" &&
+    if (
+        // userAnswer1 === "true" &&
+        // userAnswer2 === "true" &&
+        // userAnswer3 === "true" &&
+        // userAnswer4 === "true" &&
+        // userAnswer5 === "true" &&
         userAnswer6 === "true") 
         {
             $(".winning-modal").removeClass("hide");

@@ -243,7 +243,7 @@ form {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    border: 1px solid yellow;
+    border: none;
     position: relative; }
 
 .answers-container {
@@ -328,10 +328,18 @@ input[type=radio]:checked + label {
 form .hidden {
   display: none; }
 
+.defuse {
+  z-index: 400;
+  width: 100vw;
+  background: darkgrey;
+  color: red;
+  font-size: 20rem; }
+
 .bomb-container {
   position: fixed;
   bottom: -110px;
-  left: -50px; }
+  left: -50px;
+  z-index: 500; }
 
 .bomb {
   width: 450px;
@@ -341,8 +349,7 @@ form .hidden {
   background: black;
   display: block;
   -ms-flex-item-align: end;
-  align-self: flex-end;
-  z-index: 50; }
+  align-self: flex-end; }
 
 .bomb::after {
   content: '';

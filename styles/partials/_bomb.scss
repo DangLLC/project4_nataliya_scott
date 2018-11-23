@@ -4,6 +4,8 @@
   position: fixed;
     bottom: -110px;
     left: -50px;
+    z-index: 500;
+
 }
 
 .bomb {
@@ -16,7 +18,6 @@
     background: black;
     display: block;
     align-self: flex-end;
-    z-index: 50;
 }
 
 .bomb::after {
