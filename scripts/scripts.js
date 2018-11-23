@@ -35,7 +35,6 @@ bombApp.timer = function() {
             clearInterval(bombApp.countdown);
             $(".bomb").removeClass("bomb-slow-shake");
             $(".losing-modal").removeClass("hide");
-            // $(".input-container").empty();
         }
     }, 1000);
 }
@@ -100,14 +99,16 @@ bombApp.shuffle = function(array) {
     }
 }
 
+
 bombApp.questionCount = 0;
 
 $(".answers-container").on("click", "input", function() {
     const userAnswer = $(`input[name=Q${bombApp.questionCount}Answer]:checked`).val();
-    // console.log(userAnswer);
     if (userAnswer === "true") {
 
         bombApp.questionCount++;
+
+        $(`#qa${bombApp.questionCount}`).removeClass("hidden");
 
         $("html, body").animate(
             {
@@ -117,18 +118,6 @@ $(".answers-container").on("click", "input", function() {
     }
 });
     
-
-
-
-// $(document).on('click', 'a[href^="#"]', function (event) {
-//     event.preventDefault();
-
-//     $('html, body').animate({
-//         scrollTop: $($.attr(this, 'href')).offset().top
-//     }, 500);
-// });
-
-
 
 
 // when user clicks "defuse bomb"j, store all their answers into variables
@@ -153,8 +142,7 @@ $("form").on("submit", function(event) {
             $(".winning-modal").removeClass("hide");
             clearInterval(bombApp.countdown);
             $(".bomb").removeClass("bomb-slow-shake");
-            $(".winning-modal .modal-content").append(`<p class="time-left">${bombApp.seconds}</p>`);
-            // $(".input-container").empty();
+            $(".winning-modal .modal-content").append(`<p class="time-left">${bombApp.seconds + 1}</p>`);
         } else if (
         userAnswer1 === undefined ||
         userAnswer2 === undefined ||
@@ -186,19 +174,9 @@ $(".play-again-button").on("click", function(){
 
 
 
-// (double check that all answers are selected)
 
-
-// collect value of user selection as soon as they select it
-// if right, smooth scroll
-// if wrong, something
-
-
-// if yes, smooth scroll to next
-
-
-
-
+// play again doesnt work
+// defuse bomb only show up after last Q.
 
 
 
@@ -225,6 +203,8 @@ $(".play-again-button").on("click", function(){
 // --- Compare all correct answers to see if u win game DONE DONE
 // start of game modal
 // what happens when someone wins / loses
+// seconds capture is not accurate DONE DONE
+
 
 
 // NO

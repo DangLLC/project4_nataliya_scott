@@ -188,15 +188,10 @@ body {
   100% {
     background-position: 0% 50%; } }
 
-main {
-  height: 100vh; }
-
 .wrapper {
   width: 90vw;
   max-width: 1280px;
   margin: 0 auto;
-  height: 100%;
-  padding: 30px 0;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -212,7 +207,8 @@ h1 {
 h3 {
   font-family: 'Rammetto One', cursive;
   -webkit-text-stroke: 5px white;
-  font-size: 10rem;
+  font-size: 50rem;
+  line-height: 1;
   position: absolute;
   left: -40px;
   top: -20px;
@@ -229,17 +225,17 @@ form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 85%;
   text-align: center; }
   form .qa-fieldset {
-    margin: 25px 15px;
-    padding: 10px;
-    width: 60%;
+    height: 100vh;
+    padding-top: 150px;
+    width: 80%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -247,15 +243,8 @@ form {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
     border: 1px solid yellow;
-    border: none;
     position: relative; }
-
-.qa-fieldset:nth-of-type(even) {
-  margin-left: auto; }
 
 .answers-container {
   display: -webkit-box;
@@ -333,18 +322,22 @@ input[type=radio]:checked + label {
   border: 1px solid black;
   height: 40vh; }
 
+.blarg {
+  background: red; }
+
+form .hidden {
+  display: none; }
+
 .bomb-container {
-  position: absolute;
-  bottom: 0;
-  left: 0; }
+  position: fixed;
+  bottom: -110px;
+  left: -50px; }
 
 .bomb {
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   border-radius: 50%;
   position: relative;
-  bottom: -100px;
-  left: -120px;
   background: black;
   display: block;
   -ms-flex-item-align: end;

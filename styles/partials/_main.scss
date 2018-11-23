@@ -3,28 +3,26 @@
 form {
     // border: 2px solid white;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     width: 85%;
     text-align: center;
     .qa-fieldset {
-        margin: 25px 15px;
-        padding: 10px;
-        // width: calc(50% - 30px);
-        width: 60%;
+        height: 100vh;
+        padding-top: 150px;
+        width: 80%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         border: 1px solid yellow;
-        border:none;
+        // border: none;
+        // justify-content: center;
         position: relative;
     }
 }
 
-
-.qa-fieldset:nth-of-type(even) {
-    margin-left: auto;
- }
+// .qa-fieldset:nth-of-type(even) {
+//     margin-left: auto;
+//  }
 
 .answers-container {
     display: flex;
@@ -104,15 +102,22 @@ input[type=radio]:checked+label {
 
 }
 
+.blarg {
+    background: red;
+}
+
+form .hidden {
+    display: none;
+}
+
+
 // ** MOST IMPORTANT **
-// WRITE GAME INSTRUCTIONS AND MODAL INSTRUCTIONS
-// RESPONSIVE
 // REORG MODAL CODE
 // MAKE LABELS ACCESSIBLE
-
+// WRITE GAME INSTRUCTIONS AND MODAL INSTRUCTIONS
+// RESPONSIVE
 // STYLE MODALS
 // FONTS
-// ADDL JAVASCRIPT
 
 
 
