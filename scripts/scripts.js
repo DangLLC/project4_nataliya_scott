@@ -21,7 +21,7 @@ bombApp.modal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 60;
+    bombApp.seconds = 100;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -34,8 +34,12 @@ bombApp.timer = function() {
         if (bombApp.seconds < 0) {
             clearInterval(bombApp.countdown);
             $(".bomb").removeClass("bomb-slow-shake");
+            $(".bomb").addClass("bomb-explode");
+            setTimeout(function () {
+                $(".bomb").removeClass("bomb-explode");
+            }, 2000);
             $(".losing-modal").removeClass("hide");
-            // $(".input-container").empty();
+            // $(".bomb-container").addClass("hide");
         }
     }, 1000);
 }
@@ -100,6 +104,27 @@ bombApp.shuffle = function(array) {
     }
 }
 
+
+bombApp.questionCount = 0;
+
+$(".answers-container").on("click", "input", function() {
+    const userAnswer = $(`input[name=Q${bombApp.questionCount}Answer]:checked`).val();
+    if (userAnswer === "true") {
+
+        bombApp.questionCount++;
+
+        $(`#qa${bombApp.questionCount}`).removeClass("hidden");
+
+        $("html, body").animate(
+            {
+                scrollTop: $(`#qa${bombApp.questionCount}`).offset().top
+            },
+            1000);
+    }
+});
+    
+
+
 // when user clicks "defuse bomb"j, store all their answers into variables
 $("form").on("submit", function(event) {
     event.preventDefault();
@@ -122,8 +147,7 @@ $("form").on("submit", function(event) {
             $(".winning-modal").removeClass("hide");
             clearInterval(bombApp.countdown);
             $(".bomb").removeClass("bomb-slow-shake");
-            $(".winning-modal .modal-content").append(`<p class="time-left">${bombApp.seconds}</p>`);
-            // $(".input-container").empty();
+            $(".winning-modal .modal-content").append(`<p class="time-left">${bombApp.seconds + 1}</p>`);
         } else if (
         userAnswer1 === undefined ||
         userAnswer2 === undefined ||
@@ -155,33 +179,9 @@ $(".play-again-button").on("click", function(){
 
 
 
-// (double check that all answers are selected)
-// display choice in lock???
 
-
-
-// THURSDAY
-// start of game modal
-// // figure out lock thing -- is there a lock? is there a place where A/B/C/D shows up?
-// what happens when someone wins / loses
-// design decisions 
-
-// 2 attempts
-// represented by 2 heart halves.
-// if you fail 1, 1 heart half breaks off or disappears
-
-// // RULES:
-// you get 2-3 attempts
-// answer everything
-// get everything right
-// do it all before timer runs out
-
-// modal on page load with instructions, rules, start-game button
-
-
-
-
-
+// play again doesnt work
+// defuse bomb only show up after last Q.
 
 
 
@@ -206,3 +206,15 @@ $(".play-again-button").on("click", function(){
 // compare variables of the checked inputs with the correct answers (if all inputs are true, then the user wins the game) DONE DONE
 // -- Style form to look like form, hide radios DONE DONE
 // --- Compare all correct answers to see if u win game DONE DONE
+// start of game modal
+// what happens when someone wins / loses
+// seconds capture is not accurate DONE DONE
+// EXPLOSIONNNNNNNNNN done done done DONE
+
+
+
+// NO
+// // figure out lock thing -- is there a lock? is there a place where A/B/C/D shows up? NO
+// 2 attempts
+// represented by 2 heart halves.
+// if you fail 1, 1 heart half breaks off or disappears
