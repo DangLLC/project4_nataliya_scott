@@ -100,6 +100,37 @@ bombApp.shuffle = function(array) {
     }
 }
 
+bombApp.questionCount = 0;
+
+$(".answers-container").on("click", "input", function() {
+    const userAnswer = $(`input[name=Q${bombApp.questionCount}Answer]:checked`).val();
+    // console.log(userAnswer);
+    if (userAnswer === "true") {
+
+        bombApp.questionCount++;
+
+        $("html, body").animate(
+            {
+                scrollTop: $(`#qa${bombApp.questionCount}`).offset().top
+            },
+            1000);
+    }
+});
+    
+
+
+
+// $(document).on('click', 'a[href^="#"]', function (event) {
+//     event.preventDefault();
+
+//     $('html, body').animate({
+//         scrollTop: $($.attr(this, 'href')).offset().top
+//     }, 500);
+// });
+
+
+
+
 // when user clicks "defuse bomb"j, store all their answers into variables
 $("form").on("submit", function(event) {
     event.preventDefault();
@@ -156,28 +187,14 @@ $(".play-again-button").on("click", function(){
 
 
 // (double check that all answers are selected)
-// display choice in lock???
 
 
+// collect value of user selection as soon as they select it
+// if right, smooth scroll
+// if wrong, something
 
-// THURSDAY
-// start of game modal
-// // figure out lock thing -- is there a lock? is there a place where A/B/C/D shows up?
-// what happens when someone wins / loses
-// design decisions 
 
-// 2 attempts
-// represented by 2 heart halves.
-// if you fail 1, 1 heart half breaks off or disappears
-
-// // RULES:
-// you get 2-3 attempts
-// answer everything
-// get everything right
-// do it all before timer runs out
-
-// modal on page load with instructions, rules, start-game button
-
+// if yes, smooth scroll to next
 
 
 
@@ -206,3 +223,12 @@ $(".play-again-button").on("click", function(){
 // compare variables of the checked inputs with the correct answers (if all inputs are true, then the user wins the game) DONE DONE
 // -- Style form to look like form, hide radios DONE DONE
 // --- Compare all correct answers to see if u win game DONE DONE
+// start of game modal
+// what happens when someone wins / loses
+
+
+// NO
+// // figure out lock thing -- is there a lock? is there a place where A/B/C/D shows up? NO
+// 2 attempts
+// represented by 2 heart halves.
+// if you fail 1, 1 heart half breaks off or disappears

@@ -49,11 +49,13 @@ h3 {
     // position: relative;
     // top: -25px;
     // left: 0;
+    -webkit-text-stroke: 5px white;
     font-size: 10rem;
     position: absolute;
     left: -40px;
     top: -20px;
     color: rgba(0, 0, 0, 0.1);
+    // color: white;
     z-index: -1;
 }
 p {
