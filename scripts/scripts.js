@@ -21,7 +21,7 @@ bombApp.modal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 15;
+    bombApp.seconds = 60;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -121,6 +121,8 @@ $("form").on("submit", function(event) {
         {
             $(".winning-modal").removeClass("hide");
             clearInterval(bombApp.countdown);
+            $(".bomb").removeClass("bomb-slow-shake");
+            $(".winning-modal .modal-content").append(`<p class="time-left">${bombApp.seconds}</p>`);
             // $(".input-container").empty();
         } else if (
         userAnswer1 === undefined ||
