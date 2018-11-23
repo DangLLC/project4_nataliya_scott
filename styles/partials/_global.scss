@@ -4,9 +4,9 @@ html {
     font-size: 62.5%;
 }
 body {
-    font-size: 1.6rem;
+    font-family: 'Raleway', sans-serif;
     color: black;
-    background: linear-gradient(300deg, #b10404, #ff7b00, #faa916);
+    background: linear-gradient(300deg, #bfeeff,#0072ba, #00bdff, #bfeeff);
     background-size: 600% 600%;
     animation: bombAnxiety 25s ease infinite;
     // thanks to https://www.ianforrest.me/
@@ -36,7 +36,7 @@ main {
     position: relative;
     display: flex;
     justify-content: flex-end;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 h1 {
