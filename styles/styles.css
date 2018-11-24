@@ -306,6 +306,12 @@ input:focus + label {
   border: 1px solid black; }
 
 input[type=submit] {
+  border: 5px solid transparent; }
+
+input[type=submit]:focus {
+  border: 5px solid orchid; }
+
+input[type=submit] {
   width: 100%;
   padding: 15px;
   margin: 0 10px;

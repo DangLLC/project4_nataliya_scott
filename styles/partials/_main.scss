@@ -45,7 +45,6 @@ form {
     width: 40%;
     margin: 5px;
     input {
-        // display:none;
         opacity: 0;
         width: 0;
         height: 0;
@@ -69,14 +68,13 @@ form {
 input:focus + label {
     border: 1px solid black;
 }
+input[type=submit] {
+    border: 5px solid transparent;
+}
 
-// .input-container:nth-of-type(2) {
-    // margin-top: 30px;
-// }
-
-// .input-container:nth-of-type(3) {
-    // margin-top: -20px;
-// }
+input[type=submit]:focus {
+    border: 5px solid orchid;
+}
 
 input[type=submit] {
     width: 100%;
@@ -114,7 +112,6 @@ form .hidden {
 
 // ** MOST IMPORTANT **
 // REORG MODAL CODE
-// MAKE LABELS ACCESSIBLE
 // WRITE GAME INSTRUCTIONS AND MODAL INSTRUCTIONS
 // RESPONSIVE
 // STYLE MODALS

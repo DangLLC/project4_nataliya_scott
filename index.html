@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Erica+One|Goblin+One|Permanent+Marker|Rammetto+One|Stalinist+One|Raleway:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Erica+One|Goblin+One|Rammetto+One|Raleway:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <title>BOMB TRIVIA</title>
 </head>
@@ -12,12 +12,6 @@
     
     <main>
         <div class="wrapper">
-            <!-- <div class="game-details">
-                <h1>BOMB.COM</h1>
-                <p>HOW TO PLAY</p>
-                <p>START</p>
-
-            </div> -->
             <!-- START BOMB -->
             <div class="bomb-container">
                 <div class="bomb">
@@ -35,7 +29,7 @@
                         <p></p>
                     </div>
                     <div class="answers-container">
-                        
+                        <!-- answers populated here -->
                     </div>
                 </fieldset>
                 <!-- FIELDSET 2 -->
@@ -45,7 +39,7 @@
                         <p></p>
                     </div>
                     <div class="answers-container">
-                        
+                        <!-- answers populated here -->
                     </div>
                 </fieldset>
                 <!-- FIELDSET 3 -->
@@ -55,7 +49,7 @@
                         <p></p>
                     </div>
                     <div class="answers-container">
-                    
+                        <!-- answers populated here -->
                     </div>
                 </fieldset>
                 <!-- FIELDSET 4 -->
@@ -65,7 +59,7 @@
                         <p></p>
                     </div>
                     <div class="answers-container">
-                        
+                        <!-- answers populated here -->
                     </div>
                 </fieldset>
                 <!-- FIELDSET 5 -->
@@ -75,7 +69,7 @@
                         <p></p>
                     </div>
                     <div class="answers-container">
-                        
+                        <!-- answers populated here -->
                     </div>
                 </fieldset>
                 <!-- FIELDSET 6 -->
@@ -85,7 +79,7 @@
                         <p></p>
                     </div>
                     <div class="answers-container">
-                        
+                        <!-- answers populated here -->
                     </div>
                 </fieldset>
                 <fieldset class="qa-fieldset hidden defuse" id="qa6">
@@ -94,17 +88,14 @@
                         <input type="submit" value="Yes, please.">
                     </div>
                 </fieldset>
-                
-                
             </form>
-            
-       
+            <!-- end form -->      
         </div> 
         <!-- END WRAPPER -->
 
         <div class="modal start-modal">
             <div class="modal-content">
-
+                <!-- categories -->
                 <select id="category">
                     <option value="9">General Knowledge</option>
                     <option value="12">Music</option>
@@ -113,17 +104,23 @@
                     <option value="23">History</option>
                     <option value="">Random Trivia</option>
                 </select>
+                <!-- difficulty level -->
                 <select id="difficulty">
                     <option value="easy">Easy</option>
                     <option value="medium">Difficult</option>
                 </select>
-
-
                 <p>this is a modal</p>
                 <button class="start-button">this is a button</button>
             </div>
         </div>
 
+
+        <div class="modal">
+
+        </div>
+
+
+        
         <div class="modal winning-modal hide">
             <div class="modal-content">
                 <p>YOU WON</p>
@@ -152,14 +149,8 @@
             </div>
         </div>
 
-
     </main>
-
-<!-- <div class="user-answer-container">
-        <p class="user-answer"></p>
-    </div> -->
-
-
+    <!-- END MAIN -->
 
 
     <!-- jQuery CDN -->
