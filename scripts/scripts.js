@@ -9,7 +9,7 @@ bombApp.init = function() {
 };
 
 bombApp.startModal = function() {
-    $(".start-modal .start-button").on("click", function() {
+    $(".start-modal .button").on("click", function() {
         $(".start-modal").addClass("hidden");
         $(".modal-content-start").addClass("hidden");
         
@@ -44,8 +44,8 @@ bombApp.timer = function() {
             setTimeout(function(){
                 $(".modal").removeClass("hidden").append(`
                     <div class="modal-content modal-content-losing">
-                        <p>YOU LOST</p>
-                        <button class="play-again-button">Play again</button>
+                        <h2>YOU LOST</h2>
+                        <button class="play-again-button button">Play again</button>
                     </div>          
                 `);
             }, 600);
@@ -164,9 +164,9 @@ bombApp.winning = function(){
     $(".modal").append(
         `
             <div class="modal-content modal-content-winning">
-                <p>YOU WON</p>
-                <p class="time-left">${bombApp.seconds + 1}</p>
-                <button class="play-again-button">Play again</button>
+                <h2>Bomb defused!</h2>
+                <p class="time-left">You defused the bomb with ${bombApp.seconds + 1} seconds remaining. You go Glen Coco!</p>
+                <button class="play-again-button button">Play again</button>
             </div>          
             `
     );

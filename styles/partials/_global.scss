@@ -1,11 +1,14 @@
 //Global styles
+$heading-font: 'Rammetto One', cursive;
+$body-font: 'Raleway', sans-serif;
+
 
 html {
     font-size: 62.5%;
 }
 body {
     font-size: 1.6rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: $body-font;
     color: black;
     background: linear-gradient(300deg, #bfeeff,#0072ba, #00bdff, #bfeeff);
     background-size: 600% 600%;
@@ -35,13 +38,18 @@ body {
 }
 
 h1 {
-    font-family: 'Rammetto One', cursive;
+    font-family: $heading-font;
     font-size: 4rem;
     text-transform: uppercase;
 }
 
+h2 {
+    font-size: $heading-font;
+    text-transform: uppercase;
+}
+
 h3 {
-    font-family: 'Rammetto One', cursive;
+    font-family: $heading-font;
     -webkit-text-stroke: 5px white;
     font-size: 50rem;
     line-height: 1;
