@@ -233,9 +233,10 @@ form {
   width: 85%;
   text-align: center; }
   form .qa-fieldset {
+    position: relative;
+    width: 80%;
     height: 100vh;
     padding-top: 150px;
-    width: 80%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -243,18 +244,17 @@ form {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    border: none;
-    position: relative; }
+    border: none; }
 
 .answers-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
@@ -265,6 +265,7 @@ form {
 
 .submit {
   width: 100%;
+  margin: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -273,8 +274,7 @@ form {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
-  margin: 20px; }
+  align-items: center; }
 
 .input-container {
   display: -webkit-box;
@@ -283,47 +283,45 @@ form {
   width: 40%;
   margin: 5px; }
   .input-container input {
-    display: none; }
+    opacity: 0;
+    width: 0;
+    height: 0; }
   .input-container label {
-    font-size: 2rem;
-    font-weight: 600;
-    border-radius: 50px;
+    width: 100%;
     padding: 10px;
     margin: 5px;
-    width: 100%;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 50px;
     background-color: floralwhite;
     -webkit-box-shadow: 8px 8px black;
     box-shadow: 8px 8px black;
-    text-align: center;
     -webkit-transition: all .2s ease;
     -o-transition: all .2s ease;
-    transition: all .2s ease; }
+    transition: all .2s ease;
+    border: 1px solid transparent; }
+
+input:focus + label {
+  border: 1px solid black; }
 
 input[type=submit] {
   width: 100%;
   padding: 15px;
-  background: transparent;
+  margin: 0 10px;
   color: floralwhite;
   font-weight: bold;
   border: 2px solid black;
+  border-radius: 15px;
   -webkit-box-shadow: 5px 5px floralwhite;
   box-shadow: 5px 5px floralwhite;
-  background-color: black;
-  margin: 0 10px;
-  border-radius: 15px; }
+  background: transparent;
+  background-color: black; }
 
 input[type=radio]:checked + label {
   background: #f9f253;
   -webkit-box-shadow: 4px 4px black;
   box-shadow: 4px 4px black; }
-
-.game-details {
-  width: 20%;
-  border: 1px solid black;
-  height: 40vh; }
-
-.blarg {
-  background: red; }
 
 form .hidden {
   display: none; }
@@ -358,10 +356,10 @@ form .hidden {
   background: black;
   position: absolute;
   top: -20px;
-  right: 40px;
-  -webkit-transform: rotate(20deg);
-  -ms-transform: rotate(20deg);
-  transform: rotate(20deg); }
+  right: 115px;
+  -webkit-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  transform: rotate(15deg); }
 
 .bomb::before {
   content: '';
@@ -369,11 +367,11 @@ form .hidden {
   width: 30px;
   background: white;
   position: absolute;
-  top: -60px;
-  right: 60px;
-  -webkit-transform: rotate(20deg);
-  -ms-transform: rotate(20deg);
-  transform: rotate(20deg);
+  top: -65px;
+  right: 135px;
+  -webkit-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  transform: rotate(15deg);
   border: 1px solid lightgrey; }
 
 .bomb-slow-shake {

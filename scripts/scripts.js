@@ -90,7 +90,7 @@ bombApp.getTrivia = function(categoryNumber, difficulty) {
                 $(`#qa${i} .answers-container`).append(
                     `
                     <div class="input-container">
-                        <input type="radio" name="Q${i}Answer" id="${questionID}" value="${bombApp.answerArray[index].correct}"></input>
+                        <input type="radio" name="Q${i}Answer" id="${questionID}" class="visuallyhidden" value="${bombApp.answerArray[index].correct}"></input>
                         <label for="${questionID}"> ${answerObject.answerOption}</label>
                     </div>
                     `
@@ -214,7 +214,7 @@ $(".play-again-button").on("click", function(){
 // what happens when someone wins / loses
 // seconds capture is not accurate DONE DONE
 // EXPLOSIONNNNNNNNNN done done done DONE
-
+// MAKE LABELS ACCESSIBLE DONE DONE DONE DONE
 
 
 // NO
