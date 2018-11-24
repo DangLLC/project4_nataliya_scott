@@ -9,8 +9,9 @@ bombApp.init = function() {
 };
 
 bombApp.startModal = function() {
-    $(".start-modal .start-button").on("click", function() {
-        $(".start-modal").addClass("hide");
+    $(".start-modal .button").on("click", function() {
+        $(".start-modal").addClass("hidden");
+        $(".modal-content-start").addClass("hidden");
         
         // on click of modal button, capture values of CATEGORY and DIFFICULTY into variables
         const categoryNumber = $("#category option:selected").val();
@@ -41,10 +42,10 @@ bombApp.timer = function() {
             }, 1000);
             
             setTimeout(function(){
-                $(".modal").removeClass("hide").append(`
+                $(".modal").removeClass("hidden").append(`
                     <div class="modal-content modal-content-losing">
-                        <p>YOU LOST</p>
-                        <button class="play-again-button">Play again</button>
+                        <h2>YOU LOST</h2>
+                        <button class="play-again-button button">Play again</button>
                     </div>          
                 `);
             }, 600);
@@ -134,25 +135,42 @@ $(".answers-container").on("click", "input", function() {
     
 
 // when user clicks "defuse bomb"j, store all their answers into variables
-$("form").on("submit", function(event) {
+$(".defuse-button").on("click", function(event) {
     event.preventDefault();
     const userAnswer6 = $("input[name=Q5Answer]:checked").val();
     if (userAnswer6 === "true")
     {
-        $(".modal").removeClass("hide");
-        clearInterval(bombApp.countdown);
-        $(".bomb").removeClass("bomb-slow-shake");
-        $(".modal").append(
-            `
-            <div class="modal-content modal-content-winning">
-                <p>YOU WON</p>
-                <p class="time-left">${bombApp.seconds + 1}</p>
-                <button class="play-again-button">Play again</button>
-            </div>          
-            `
-        );
+        bombApp.winning();
     }
 });
+
+$(".explosion-button").on("click", function (event) {
+    console.log("you pressed me");
+    event.preventDefault();
+    const userAnswer6 = $("input[name=Q5Answer]:checked").val();
+    if (userAnswer6 === "true") {
+        setTimeout(function () {
+            bombApp.winning();
+        }, 600);
+    }
+});
+
+
+bombApp.winning = function(){
+    console.log("Im working");
+    $(".modal").removeClass("hidden");
+    clearInterval(bombApp.countdown);
+    $(".bomb").removeClass("bomb-slow-shake");
+    $(".modal").append(
+        `
+            <div class="modal-content modal-content-winning">
+                <h2>Bomb defused!</h2>
+                <p class="time-left">You defused the bomb with ${bombApp.seconds + 1} seconds remaining. You go Glen Coco!</p>
+                <button class="play-again-button button">Play again</button>
+            </div>          
+            `
+    );
+}
 
 $(".explosion-button").on("click", function() {
     $(".bomb").addClass("bomb-explode")
@@ -163,9 +181,10 @@ $(".explosion-button").on("click", function() {
     
 $(".modal").on("click", ".play-again-button", function(){
     console.log("working");
-    $(".game-end-modal").addClass("hide");
-    $(".modal-content-losing, .modal-content-winning").addClass("hide");
-    $(".start-modal").removeClass("hide");
+    // $(".game-end-modal").addClass("hidden");
+    $(".modal-content-losing, .modal-content-winning").addClass("hidden");
+    $(".start-modal").removeClass("hidden");
+    $(".modal-content-start").removeClass("hidden");
     $(".defuse").addClass("hidden");
     $(".next-q").addClass("hidden");
     $(`.question p`).empty();
