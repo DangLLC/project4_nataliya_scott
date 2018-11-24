@@ -21,7 +21,7 @@ bombApp.startModal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 60;
+    bombApp.seconds = 1;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -134,18 +134,22 @@ $(".answers-container").on("click", "input", function() {
 // when user clicks "defuse bomb"j, store all their answers into variables
 $("form").on("submit", function(event) {
     event.preventDefault();
-    $(".modal").removeClass("hide");
-    clearInterval(bombApp.countdown);
-    $(".bomb").removeClass("bomb-slow-shake");
-    $(".modal").append(
-        `
-        <div class="modal-content modal-content-winning">
-            <p>YOU WON</p>
-            <p class="time-left">${bombApp.seconds + 1}</p>
-            <button class="play-again-button">Play again</button>
-        </div>          
-        `
-    );
+    const userAnswer6 = $("input[name=Q5Answer]:checked").val();
+    if (userAnswer6 === "true")
+    {
+        $(".modal").removeClass("hide");
+        clearInterval(bombApp.countdown);
+        $(".bomb").removeClass("bomb-slow-shake");
+        $(".modal").append(
+            `
+            <div class="modal-content modal-content-winning">
+                <p>YOU WON</p>
+                <p class="time-left">${bombApp.seconds + 1}</p>
+                <button class="play-again-button">Play again</button>
+            </div>          
+            `
+        );
+    }
 });
 
 $(".explosion-button").on("click", function() {
@@ -158,8 +162,12 @@ $(".explosion-button").on("click", function() {
 $(".modal").on("click", ".play-again-button", function(){
     console.log("working");
     $(".modal").addClass("hide");
+    $(".defuse").addClass("hidden");
+    $(".qa-fieldset-secondary").addClass("hidden");
     $(`.question p`).empty();
     $(`.answers-container`).empty();
+    $(`.seconds p`).empty();
+    $(`.modal-content-winning, .modal-content-losing`).empty();
     $(".start-modal").removeClass("hide");
 });
 

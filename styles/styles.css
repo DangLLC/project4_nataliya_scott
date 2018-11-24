@@ -576,10 +576,9 @@ form .hidden {
   text-align: center; }
 
 .start-modal {
-  width: 75vw;
-  height: 75vh;
+  width: 85vw;
+  height: 85vh;
   padding: 25px;
-  background: white;
   position: fixed;
   z-index: 450;
   top: 50%;
