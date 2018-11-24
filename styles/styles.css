@@ -559,9 +559,9 @@ form .hidden {
     transform: scale(10); } }
 
 .modal {
-  width: 75vw;
-  height: 75vh;
-  padding: 25px;
+  width: 70vw;
+  height: 70vh;
+  padding: 100px;
   background: white;
   position: fixed;
   z-index: 450;
@@ -575,18 +575,6 @@ form .hidden {
   color: black;
   text-align: center; }
 
-.start-modal {
-  width: 85vw;
-  height: 85vh;
-  padding: 25px;
-  position: fixed;
-  z-index: 450;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  border: 15px solid black;
-  border-radius: 50px;
-  color: black;
-  text-align: center; }
+.modal-content {
+  border: 1px solid red;
+  padding: 50px; }

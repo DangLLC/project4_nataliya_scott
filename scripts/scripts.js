@@ -11,6 +11,7 @@ bombApp.init = function() {
 bombApp.startModal = function() {
     $(".start-modal .start-button").on("click", function() {
         $(".start-modal").addClass("hide");
+        
         // on click of modal button, capture values of CATEGORY and DIFFICULTY into variables
         const categoryNumber = $("#category option:selected").val();
         const difficulty = $("#difficulty option:selected").val();
@@ -21,7 +22,7 @@ bombApp.startModal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 1;
+    bombApp.seconds = 1000;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -119,6 +120,7 @@ bombApp.questionCount = 0;
 
 $(".answers-container").on("click", "input", function() {
     const userAnswer = $(`input[name=Q${bombApp.questionCount}Answer]:checked`).val();
+    console.log(userAnswer);
     if (userAnswer === "true") {
         bombApp.questionCount++;
         $(`#qa${bombApp.questionCount}`).removeClass("hidden");
@@ -161,14 +163,15 @@ $(".explosion-button").on("click", function() {
     
 $(".modal").on("click", ".play-again-button", function(){
     console.log("working");
-    $(".modal").addClass("hide");
+    $(".game-end-modal").addClass("hide");
+    $(".modal-content-losing, .modal-content-winning").addClass("hide");
+    $(".start-modal").removeClass("hide");
     $(".defuse").addClass("hidden");
-    $(".qa-fieldset-secondary").addClass("hidden");
+    $(".next-q").addClass("hidden");
     $(`.question p`).empty();
     $(`.answers-container`).empty();
     $(`.seconds p`).empty();
-    $(`.modal-content-winning, .modal-content-losing`).empty();
-    $(".start-modal").removeClass("hide");
+    bombApp.questionCount = 0;
 });
 
 
@@ -204,7 +207,7 @@ $(".modal").on("click", ".play-again-button", function(){
 // EXPLOSIONNNNNNNNNN done done done DONE
 // MAKE LABELS ACCESSIBLE DONE DONE DONE DONE
 // defuse bomb only show up after last Q. DONE DONE
-
+// REORG MODAL CODE DONE DONE DONE DONE DONE
 
 
 
@@ -215,3 +218,23 @@ $(".modal").on("click", ".play-again-button", function(){
 // represented by 2 heart halves.
 // if you fail 1, 1 heart half breaks off or disappears
 // try again stuff, incomplete stuff 
+
+
+
+
+// start game
+// start-game modal shows
+// play game
+
+// timer runs out / lose game
+// show modal
+// show "play again" for losing contents
+// when play again: 
+// - clear contents 
+// - hide contents-container
+// - show start contents
+
+// timer does not run out / win game
+// show modal "play again" for winning
+
+
