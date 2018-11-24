@@ -36,3 +36,18 @@
     font-family: 'Rammetto One', cursive;
     text-transform: uppercase;
 }
+
+select {
+   margin: 10px;
+   width: 250px;
+   padding: 5px 35px 5px 5px;
+   font-size: 1.8rem;
+   border: 1px solid #ccc;
+   height: 34px;
+   appearance: none;
+}
+
+//dropdown for IE
+select::-ms-expand {
+   display: none;
+}
