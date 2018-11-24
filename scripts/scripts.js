@@ -10,7 +10,8 @@ bombApp.init = function() {
 
 bombApp.startModal = function() {
     $(".start-modal .start-button").on("click", function() {
-        $(".start-modal").addClass("hide");
+        $(".start-modal").addClass("hidden");
+        $(".modal-content-start").addClass("hidden");
         
         // on click of modal button, capture values of CATEGORY and DIFFICULTY into variables
         const categoryNumber = $("#category option:selected").val();
@@ -41,7 +42,7 @@ bombApp.timer = function() {
             }, 1000);
             
             setTimeout(function(){
-                $(".modal").removeClass("hide").append(`
+                $(".modal").removeClass("hidden").append(`
                     <div class="modal-content modal-content-losing">
                         <p>YOU LOST</p>
                         <button class="play-again-button">Play again</button>
@@ -139,7 +140,7 @@ $("form").on("submit", function(event) {
     const userAnswer6 = $("input[name=Q5Answer]:checked").val();
     if (userAnswer6 === "true")
     {
-        $(".modal").removeClass("hide");
+        $(".modal").removeClass("hidden");
         clearInterval(bombApp.countdown);
         $(".bomb").removeClass("bomb-slow-shake");
         $(".modal").append(
@@ -163,9 +164,10 @@ $(".explosion-button").on("click", function() {
     
 $(".modal").on("click", ".play-again-button", function(){
     console.log("working");
-    $(".game-end-modal").addClass("hide");
-    $(".modal-content-losing, .modal-content-winning").addClass("hide");
-    $(".start-modal").removeClass("hide");
+    $(".game-end-modal").addClass("hidden");
+    $(".modal-content-losing, .modal-content-winning").addClass("hidden");
+    $(".start-modal").removeClass("hidden");
+    $(".modal-content-start").removeClass("hidden");
     $(".defuse").addClass("hidden");
     $(".next-q").addClass("hidden");
     $(`.question p`).empty();

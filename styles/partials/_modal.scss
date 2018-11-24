@@ -4,6 +4,7 @@
     padding: 100px;
     // background: url(../assets/moreboom.svg), linear-gradient(rgb(0,0,0), rgb(0,0,0));
     background-position: center;
+    background: white;
     display: flex;
     justify-content: center;
     // background-repeat: no-repeat;
@@ -28,14 +29,14 @@
     }
 }
 
-.start-button {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    border: 10px solid black;
-    font-family: 'Rammetto One', cursive;
-    text-transform: uppercase;
-}
+// .start-button {
+//     border-radius: 50%;
+//     width: 100px;
+//     height: 100px;
+//     border: 10px solid black;
+//     font-family: 'Rammetto One', cursive;
+//     text-transform: uppercase;
+// }
 
 select {
    margin: 10px;
@@ -50,4 +51,8 @@ select {
 //dropdown for IE
 select::-ms-expand {
    display: none;
+}
+
+.hidden {
+    display: none;
 }
