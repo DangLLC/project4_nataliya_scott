@@ -99,13 +99,29 @@ form .hidden {
 
 .defuse {
     z-index: 400;
-    width: 100vw;
-    background: darkgrey;
-    color: red;
-    font-size: 20rem;
+    // width: 100vw;
+    // background: red;
+    .submit {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
+.button-container {
+    display: flex;
+}
 
+.defuse-question {
+    font-size: 10rem;
+    text-transform: uppercase;
+    font-family: $heading-font;
+    color: white;
+    text-align: center;
+}
+
+.button {
+    margin: 0 20px;
+}
 
 
 

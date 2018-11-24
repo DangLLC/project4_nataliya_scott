@@ -336,11 +336,30 @@ form .hidden {
   display: none; }
 
 .defuse {
-  z-index: 400;
-  width: 100vw;
-  background: darkgrey;
-  color: red;
-  font-size: 20rem; }
+  z-index: 400; }
+  .defuse .submit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+
+.button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.defuse-question {
+  font-size: 10rem;
+  text-transform: uppercase;
+  font-family: "Rammetto One", cursive;
+  color: white;
+  text-align: center; }
+
+.button {
+  margin: 0 20px; }
 
 .bomb-container {
   position: fixed;

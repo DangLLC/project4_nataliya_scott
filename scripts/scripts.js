@@ -23,7 +23,7 @@ bombApp.startModal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 1000;
+    bombApp.seconds = 5000;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -131,14 +131,16 @@ $(".answers-container").on("click", "input", function() {
             },
             1000);
     }
+    const userAnswer6 = $("input[name=Q5Answer]:checked").val();
+    bombApp.userAnswer6 = userAnswer6;
 });
     
 
 // when user clicks "defuse bomb"j, store all their answers into variables
 $(".defuse-button").on("click", function(event) {
     event.preventDefault();
-    const userAnswer6 = $("input[name=Q5Answer]:checked").val();
-    if (userAnswer6 === "true")
+    // const userAnswer6 = $("input[name=Q5Answer]:checked").val();
+    if (bombApp.userAnswer6 === "true")
     {
         bombApp.winning();
     }
