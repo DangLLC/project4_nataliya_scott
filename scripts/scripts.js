@@ -21,7 +21,7 @@ bombApp.startModal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 2;
+    bombApp.seconds = 60;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -128,55 +128,31 @@ $(".answers-container").on("click", "input", function() {
             },
             1000);
     }
-
-    // if (userAnswer6 === "true") {
-    //     $(".submit").removeClass("hide");
-    // }
 });
     
 
 // when user clicks "defuse bomb"j, store all their answers into variables
 $("form").on("submit", function(event) {
     event.preventDefault();
-    // const userAnswer1 = $("input[name=Q0Answer]:checked").val();
-    // const userAnswer2 = $("input[name=Q1Answer]:checked").val();
-    // const userAnswer3 = $("input[name=Q2Answer]:checked").val();
-    // const userAnswer4 = $("input[name=Q3Answer]:checked").val();
-    // const userAnswer5 = $("input[name=Q4Answer]:checked").val();
-    const userAnswer6 = $("input[name=Q5Answer]:checked").val();
+    $(".modal").removeClass("hide");
+    clearInterval(bombApp.countdown);
+    $(".bomb").removeClass("bomb-slow-shake");
+    $(".modal").append(
+        `
+        <div class="modal-content modal-content-winning">
+            <p>YOU WON</p>
+            <p class="time-left">${bombApp.seconds + 1}</p>
+            <button class="play-again-button">Play again</button>
+        </div>          
+        `
+    );
+});
 
-    console.log(userAnswer1, userAnswer2, userAnswer3, userAnswer4, userAnswer5, userAnswer6);
-    // check if answers are correct / if they won
-    if (
-        // userAnswer1 === "true" &&
-        // userAnswer2 === "true" &&
-        // userAnswer3 === "true" &&
-        // userAnswer4 === "true" &&
-        // userAnswer5 === "true" &&
-        userAnswer6 === "true") 
-        {
-            $(".modal").removeClass("hide");
-            clearInterval(bombApp.countdown);
-            $(".bomb").removeClass("bomb-slow-shake");
-            $(".modal").append(`
-                <div class="modal-content modal-content-winning">
-                    <p>YOU WON</p>
-                    <p class="time-left">${bombApp.seconds + 1}</p>
-                    <button class="play-again-button">Play again</button>
-                </div>          
-            `);
-        } else if (
-        userAnswer1 === undefined ||
-        userAnswer2 === undefined ||
-        userAnswer3 === undefined ||
-        userAnswer4 === undefined ||
-        userAnswer5 === undefined ||
-        userAnswer6 === undefined) 
-        {
-            $(".incomplete-form-modal").removeClass("hide");
-        } else {
-            $(".try-again-modal").removeClass("hide");
-        }
+$(".explosion-button").on("click", function() {
+    $(".bomb").addClass("bomb-explode")
+    setTimeout(function() {
+        $(".bomb").removeClass("bomb-explode");
+    }, 1000);
 });
     
 $(".modal").on("click", ".play-again-button", function(){
