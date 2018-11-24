@@ -135,25 +135,42 @@ $(".answers-container").on("click", "input", function() {
     
 
 // when user clicks "defuse bomb"j, store all their answers into variables
-$("form").on("submit", function(event) {
+$(".defuse-button").on("click", function(event) {
     event.preventDefault();
     const userAnswer6 = $("input[name=Q5Answer]:checked").val();
     if (userAnswer6 === "true")
     {
-        $(".modal").removeClass("hidden");
-        clearInterval(bombApp.countdown);
-        $(".bomb").removeClass("bomb-slow-shake");
-        $(".modal").append(
-            `
+        bombApp.winning();
+    }
+});
+
+$(".explosion-button").on("click", function (event) {
+    console.log("you pressed me");
+    event.preventDefault();
+    const userAnswer6 = $("input[name=Q5Answer]:checked").val();
+    if (userAnswer6 === "true") {
+        setTimeout(function () {
+            bombApp.winning();
+        }, 600);
+    }
+});
+
+
+bombApp.winning = function(){
+    console.log("Im working");
+    $(".modal").removeClass("hidden");
+    clearInterval(bombApp.countdown);
+    $(".bomb").removeClass("bomb-slow-shake");
+    $(".modal").append(
+        `
             <div class="modal-content modal-content-winning">
                 <p>YOU WON</p>
                 <p class="time-left">${bombApp.seconds + 1}</p>
                 <button class="play-again-button">Play again</button>
             </div>          
             `
-        );
-    }
-});
+    );
+}
 
 $(".explosion-button").on("click", function() {
     $(".bomb").addClass("bomb-explode")
@@ -164,7 +181,7 @@ $(".explosion-button").on("click", function() {
     
 $(".modal").on("click", ".play-again-button", function(){
     console.log("working");
-    $(".game-end-modal").addClass("hidden");
+    // $(".game-end-modal").addClass("hidden");
     $(".modal-content-losing, .modal-content-winning").addClass("hidden");
     $(".start-modal").removeClass("hidden");
     $(".modal-content-start").removeClass("hidden");
