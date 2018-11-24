@@ -163,6 +163,7 @@ html {
   font-size: 62.5%; }
 
 body {
+  font-size: 1.6rem;
   font-family: 'Raleway', sans-serif;
   color: black;
   background: -webkit-linear-gradient(150deg, #bfeeff, #0072ba, #00bdff, #bfeeff);
@@ -562,7 +563,13 @@ form .hidden {
   width: 70vw;
   height: 70vh;
   padding: 100px;
-  background: white;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: fixed;
   z-index: 450;
   top: 50%;
@@ -576,8 +583,19 @@ form .hidden {
   text-align: center; }
 
 .modal-content {
-  border: 1px solid red;
   padding: 50px; }
+  .modal-content p {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    font-weight: bold; }
+
+.start-button {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: 10px solid black;
+  font-family: 'Rammetto One', cursive;
+  text-transform: uppercase; }
 
 select {
   margin: 10px;
