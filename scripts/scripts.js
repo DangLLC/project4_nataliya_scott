@@ -5,12 +5,12 @@ $(function() {
 });
 
 bombApp.init = function() {
-    bombApp.modal();
+    bombApp.startModal();
 };
 
-bombApp.modal = function() {
-    $(".modal .start-button").on("click", function() {
-        $(".modal").addClass("hide");
+bombApp.startModal = function() {
+    $(".start-modal .start-button").on("click", function() {
+        $(".start-modal").addClass("hide");
         // on click of modal button, capture values of CATEGORY and DIFFICULTY into variables
         const categoryNumber = $("#category option:selected").val();
         const difficulty = $("#difficulty option:selected").val();
@@ -21,7 +21,7 @@ bombApp.modal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 1000;
+    bombApp.seconds = 2;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -37,9 +37,16 @@ bombApp.timer = function() {
             $(".bomb").addClass("bomb-explode");
             setTimeout(function () {
                 $(".bomb").removeClass("bomb-explode");
-            }, 2000);
-            $(".losing-modal").removeClass("hide");
-            // $(".bomb-container").addClass("hide");
+            }, 1000);
+            
+            setTimeout(function(){
+                $(".modal").removeClass("hide").append(`
+                    <div class="modal-content modal-content-losing">
+                        <p>YOU LOST</p>
+                        <button class="play-again-button">Play again</button>
+                    </div>          
+                `);
+            }, 600);
         }
     }, 1000);
 }
@@ -148,10 +155,16 @@ $("form").on("submit", function(event) {
         // userAnswer5 === "true" &&
         userAnswer6 === "true") 
         {
-            $(".winning-modal").removeClass("hide");
+            $(".modal").removeClass("hide");
             clearInterval(bombApp.countdown);
             $(".bomb").removeClass("bomb-slow-shake");
-            $(".winning-modal .modal-content").append(`<p class="time-left">${bombApp.seconds + 1}</p>`);
+            $(".modal").append(`
+                <div class="modal-content modal-content-winning">
+                    <p>YOU WON</p>
+                    <p class="time-left">${bombApp.seconds + 1}</p>
+                    <button class="play-again-button">Play again</button>
+                </div>          
+            `);
         } else if (
         userAnswer1 === undefined ||
         userAnswer2 === undefined ||
@@ -166,16 +179,9 @@ $("form").on("submit", function(event) {
         }
 });
     
-$(".try-again-button").on("click", function(){
-    $(".try-again-modal").addClass("hide");
-});
-
-$(".try-again-button").on("click", function () {
-    $(".incomplete-form-modal").addClass("hide");
-});
-
-$(".play-again-button").on("click", function(){
-    $(".losing-modal").addClass("hide");
+$(".modal").on("click", ".play-again-button", function(){
+    console.log("working");
+    $(".modal").addClass("hide");
     $(`.question p`).empty();
     $(`.answers-container`).empty();
     $(".start-modal").removeClass("hide");
@@ -184,8 +190,6 @@ $(".play-again-button").on("click", function(){
 
 
 
-// play again doesnt work
-// defuse bomb only show up after last Q.
 
 
 
@@ -215,6 +219,10 @@ $(".play-again-button").on("click", function(){
 // seconds capture is not accurate DONE DONE
 // EXPLOSIONNNNNNNNNN done done done DONE
 // MAKE LABELS ACCESSIBLE DONE DONE DONE DONE
+// defuse bomb only show up after last Q. DONE DONE
+
+
+
 
 
 // NO
@@ -222,3 +230,4 @@ $(".play-again-button").on("click", function(){
 // 2 attempts
 // represented by 2 heart halves.
 // if you fail 1, 1 heart half breaks off or disappears
+// try again stuff, incomplete stuff 
