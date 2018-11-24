@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Erica+One|Goblin+One|Permanent+Marker|Rammetto+One|Stalinist+One|Raleway:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Erica+One|Goblin+One|Rammetto+One|Raleway:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <title>BOMB TRIVIA</title>
 </head>
@@ -12,12 +12,6 @@
     
     <main>
         <div class="wrapper">
-            <!-- <div class="game-details">
-                <h1>BOMB.COM</h1>
-                <p>HOW TO PLAY</p>
-                <p>START</p>
-
-            </div> -->
             <!-- START BOMB -->
             <div class="bomb-container">
                 <div class="bomb">
@@ -35,76 +29,74 @@
                         <p></p>
                     </div>
                     <div class="answers-container">
-                        
+                        <!-- answers populated here -->
                     </div>
                 </fieldset>
                 <!-- FIELDSET 2 -->
-                <fieldset class="qa-fieldset hidden" id="qa1">
+                <fieldset class="qa-fieldset next-q hidden" id="qa1">
                     <h3>2</h3>
                     <div class="question">
                         <p></p>
                     </div>
                     <div class="answers-container">
-                        
+                        <!-- answers populated here -->
                     </div>
                 </fieldset>
                 <!-- FIELDSET 3 -->
-                <fieldset class="qa-fieldset hidden" id="qa2">
+                <fieldset class="qa-fieldset next-q hidden" id="qa2">
                     <h3>3</h3>
                     <div class="question">
                         <p></p>
                     </div>
                     <div class="answers-container">
-                    
+                        <!-- answers populated here -->
                     </div>
                 </fieldset>
                 <!-- FIELDSET 4 -->
-                <fieldset class="qa-fieldset hidden" id="qa3">
+                <fieldset class="qa-fieldset next-q hidden" id="qa3">
                     <h3>4</h3>
                     <div class="question">
                         <p></p>
                     </div>
                     <div class="answers-container">
-                        
+                        <!-- answers populated here -->
                     </div>
                 </fieldset>
                 <!-- FIELDSET 5 -->
-                <fieldset class="qa-fieldset hidden" id="qa4">
+                <fieldset class="qa-fieldset next-q hidden" id="qa4">
                     <h3>5</h3> 
                     <div class="question">
                         <p></p>
                     </div>
                     <div class="answers-container">
-                        
+                        <!-- answers populated here -->
                     </div>
                 </fieldset>
                 <!-- FIELDSET 6 -->
-                <fieldset class="qa-fieldset hidden" id="qa5">
+                <fieldset class="qa-fieldset next-q hidden" id="qa5">
                     <h3>6</h3>
                     <div class="question">
                         <p></p>
                     </div>
                     <div class="answers-container">
-                        
+                        <!-- answers populated here -->
                     </div>
                 </fieldset>
                 <fieldset class="qa-fieldset hidden defuse" id="qa6">
                     <div class="submit">
                         <p>DEFUSE BOMB?</p>
                         <input type="submit" value="Yes, please.">
+                        <button class="explosion-button">No</button>
                     </div>
                 </fieldset>
-                
-                
             </form>
-            
-       
+            <!-- end form -->      
         </div> 
         <!-- END WRAPPER -->
-
+        <!-- Comic Shout by Lucas Helle from the Noun Project -->
         <div class="modal start-modal">
-            <div class="modal-content">
-
+            <div class="modal-content modal-content-start">
+                <!-- categories -->
                 <select id="category">
                     <option value="9">General Knowledge</option>
                     <option value="12">Music</option>
@@ -113,16 +105,23 @@
                     <option value="23">History</option>
                     <option value="">Random Trivia</option>
                 </select>
+                <!-- difficulty level -->
                 <select id="difficulty">
                     <option value="easy">Easy</option>
                     <option value="medium">Difficult</option>
                 </select>
-
-
                 <p>this is a modal</p>
                 <button class="start-button">this is a button</button>
             </div>
         </div>
+    <!-- </div> -->
+
+
+        <div class="modal game-end-modal hide">
+
+        </div>
+
+<!-- 
 
         <div class="modal winning-modal hide">
             <div class="modal-content">
@@ -136,30 +135,10 @@
                 <p>YOU LOST</p>
                 <button class="play-again-button">Play again</button>
             </div>
-        </div>
-
-        <div class="modal try-again-modal hide">
-            <div class="modal-content">
-                <p>One or more of the questions are wrong. Please try again.</p>
-                <button class="try-again-button">Try again</button>
-            </div>
-        </div>
-
-        <div class="modal incomplete-form-modal hide">
-            <div class="modal-content">
-                <p>You didnt answer all the questions.</p>
-                <button class="try-again-button">Try again</button>
-            </div>
-        </div>
-
+        </div> -->
 
     </main>
-
-<!-- <div class="user-answer-container">
-        <p class="user-answer"></p>
-    </div> -->
-
-
+    <!-- END MAIN -->
 
 
     <!-- jQuery CDN -->

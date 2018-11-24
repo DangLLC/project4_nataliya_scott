@@ -5,12 +5,13 @@ $(function() {
 });
 
 bombApp.init = function() {
-    bombApp.modal();
+    bombApp.startModal();
 };
 
-bombApp.modal = function() {
-    $(".modal .start-button").on("click", function() {
-        $(".modal").addClass("hide");
+bombApp.startModal = function() {
+    $(".start-modal .start-button").on("click", function() {
+        $(".start-modal").addClass("hide");
+        
         // on click of modal button, capture values of CATEGORY and DIFFICULTY into variables
         const categoryNumber = $("#category option:selected").val();
         const difficulty = $("#difficulty option:selected").val();
@@ -37,9 +38,16 @@ bombApp.timer = function() {
             $(".bomb").addClass("bomb-explode");
             setTimeout(function () {
                 $(".bomb").removeClass("bomb-explode");
-            }, 2000);
-            $(".losing-modal").removeClass("hide");
-            // $(".bomb-container").addClass("hide");
+            }, 1000);
+            
+            setTimeout(function(){
+                $(".modal").removeClass("hide").append(`
+                    <div class="modal-content modal-content-losing">
+                        <p>YOU LOST</p>
+                        <button class="play-again-button">Play again</button>
+                    </div>          
+                `);
+            }, 600);
         }
     }, 1000);
 }
@@ -90,7 +98,7 @@ bombApp.getTrivia = function(categoryNumber, difficulty) {
                 $(`#qa${i} .answers-container`).append(
                     `
                     <div class="input-container">
-                        <input type="radio" name="Q${i}Answer" id="${questionID}" value="${bombApp.answerArray[index].correct}"></input>
+                        <input type="radio" name="Q${i}Answer" id="${questionID}" class="visuallyhidden" value="${bombApp.answerArray[index].correct}"></input>
                         <label for="${questionID}"> ${answerObject.answerOption}</label>
                     </div>
                     `
@@ -112,6 +120,7 @@ bombApp.questionCount = 0;
 
 $(".answers-container").on("click", "input", function() {
     const userAnswer = $(`input[name=Q${bombApp.questionCount}Answer]:checked`).val();
+    console.log(userAnswer);
     if (userAnswer === "true") {
         bombApp.questionCount++;
         $(`#qa${bombApp.questionCount}`).removeClass("hidden");
@@ -121,71 +130,53 @@ $(".answers-container").on("click", "input", function() {
             },
             1000);
     }
-
-    // if (userAnswer6 === "true") {
-    //     $(".submit").removeClass("hide");
-    // }
 });
     
 
 // when user clicks "defuse bomb"j, store all their answers into variables
 $("form").on("submit", function(event) {
     event.preventDefault();
-    // const userAnswer1 = $("input[name=Q0Answer]:checked").val();
-    // const userAnswer2 = $("input[name=Q1Answer]:checked").val();
-    // const userAnswer3 = $("input[name=Q2Answer]:checked").val();
-    // const userAnswer4 = $("input[name=Q3Answer]:checked").val();
-    // const userAnswer5 = $("input[name=Q4Answer]:checked").val();
     const userAnswer6 = $("input[name=Q5Answer]:checked").val();
+    if (userAnswer6 === "true")
+    {
+        $(".modal").removeClass("hide");
+        clearInterval(bombApp.countdown);
+        $(".bomb").removeClass("bomb-slow-shake");
+        $(".modal").append(
+            `
+            <div class="modal-content modal-content-winning">
+                <p>YOU WON</p>
+                <p class="time-left">${bombApp.seconds + 1}</p>
+                <button class="play-again-button">Play again</button>
+            </div>          
+            `
+        );
+    }
+});
 
-    console.log(userAnswer1, userAnswer2, userAnswer3, userAnswer4, userAnswer5, userAnswer6);
-    // check if answers are correct / if they won
-    if (
-        // userAnswer1 === "true" &&
-        // userAnswer2 === "true" &&
-        // userAnswer3 === "true" &&
-        // userAnswer4 === "true" &&
-        // userAnswer5 === "true" &&
-        userAnswer6 === "true") 
-        {
-            $(".winning-modal").removeClass("hide");
-            clearInterval(bombApp.countdown);
-            $(".bomb").removeClass("bomb-slow-shake");
-            $(".winning-modal .modal-content").append(`<p class="time-left">${bombApp.seconds + 1}</p>`);
-        } else if (
-        userAnswer1 === undefined ||
-        userAnswer2 === undefined ||
-        userAnswer3 === undefined ||
-        userAnswer4 === undefined ||
-        userAnswer5 === undefined ||
-        userAnswer6 === undefined) 
-        {
-            $(".incomplete-form-modal").removeClass("hide");
-        } else {
-            $(".try-again-modal").removeClass("hide");
-        }
+$(".explosion-button").on("click", function() {
+    $(".bomb").addClass("bomb-explode")
+    setTimeout(function() {
+        $(".bomb").removeClass("bomb-explode");
+    }, 1000);
 });
     
-$(".try-again-button").on("click", function(){
-    $(".try-again-modal").addClass("hide");
-});
-
-$(".try-again-button").on("click", function () {
-    $(".incomplete-form-modal").addClass("hide");
-});
-
-$(".play-again-button").on("click", function(){
-    $(".losing-modal").addClass("hide");
+$(".modal").on("click", ".play-again-button", function(){
+    console.log("working");
+    $(".game-end-modal").addClass("hide");
+    $(".modal-content-losing, .modal-content-winning").addClass("hide");
+    $(".start-modal").removeClass("hide");
+    $(".defuse").addClass("hidden");
+    $(".next-q").addClass("hidden");
     $(`.question p`).empty();
     $(`.answers-container`).empty();
-    $(".start-modal").removeClass("hide");
+    $(`.seconds p`).empty();
+    bombApp.questionCount = 0;
 });
 
 
 
 
-// play again doesnt work
-// defuse bomb only show up after last Q.
 
 
 
@@ -214,6 +205,10 @@ $(".play-again-button").on("click", function(){
 // what happens when someone wins / loses
 // seconds capture is not accurate DONE DONE
 // EXPLOSIONNNNNNNNNN done done done DONE
+// MAKE LABELS ACCESSIBLE DONE DONE DONE DONE
+// defuse bomb only show up after last Q. DONE DONE
+// REORG MODAL CODE DONE DONE DONE DONE DONE
+
 
 
 
@@ -222,3 +217,24 @@ $(".play-again-button").on("click", function(){
 // 2 attempts
 // represented by 2 heart halves.
 // if you fail 1, 1 heart half breaks off or disappears
+// try again stuff, incomplete stuff 
+
+
+
+
+// start game
+// start-game modal shows
+// play game
+
+// timer runs out / lose game
+// show modal
+// show "play again" for losing contents
+// when play again: 
+// - clear contents 
+// - hide contents-container
+// - show start contents
+
+// timer does not run out / win game
+// show modal "play again" for winning
+
+
