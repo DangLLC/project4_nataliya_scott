@@ -23,6 +23,14 @@
     border-color: $hover-color;
 }
 
+.defuse-button {
+    border-color: limegreen;
+}
+
+.explosion-button {
+    border-color: $hover-color;
+}
+
 .defuse-button:hover {
     border-color: $hover-color;
 }
@@ -38,6 +46,10 @@
         border: 7px solid $black;
         line-height: 1.2;
         // background: red;
+    }
+
+    .defuse-button, .explosion-button {
+        border-color: $accent-color;
     }
 }
 
