@@ -201,24 +201,22 @@ body {
   -ms-flex-pack: end;
   justify-content: flex-end; }
 
-h1 {
+h1, h2, h3 {
   font-family: "Rammetto One", cursive;
-  font-size: 4rem;
   text-transform: uppercase; }
 
-h2 {
-  font-size: "Rammetto One", cursive;
-  text-transform: uppercase; }
+h1 {
+  font-size: 4rem; }
 
-h3 {
+.number {
   font-family: "Rammetto One", cursive;
   -webkit-text-stroke: 5px white;
-  font-size: 50rem;
+  font-size: 70rem;
   line-height: 1;
   position: absolute;
-  left: -40px;
-  top: -20px;
-  color: rgba(0, 0, 0, 0.1);
+  left: 35%;
+  top: 0;
+  color: rgba(68, 29, 29, 0.1);
   z-index: -1; }
 
 p {
@@ -239,7 +237,7 @@ form {
     position: relative;
     width: 80%;
     height: 100vh;
-    padding-top: 150px;
+    padding-top: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -263,8 +261,12 @@ form {
   align-items: center; }
 
 .question p {
-  font-size: 3rem;
-  font-weight: 700; }
+  font-family: "Rammetto One", cursive;
+  color: white;
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-shadow: 5px 5px black,  6px 6px black,  7px 7px black,  8px 8px black,  9px 9px black, 10px 10px black, 11px 11px black, 12px 12px black, 13px 13px black, 14px 14px black, 15px 15px black, 16px 16px yellow; }
 
 .submit {
   width: 100%;

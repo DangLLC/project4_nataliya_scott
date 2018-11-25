@@ -11,9 +11,10 @@ form {
         position: relative;
         width: 80%;
         height: 100vh;
-        padding-top: 150px;
+        padding-top: 50px;
         display: flex;
         flex-direction: column;
+        // justify-content: center;
         // border: 1px solid yellow;
         border: none;
     }
@@ -27,8 +28,28 @@ form {
 }
 
 .question p {
-    font-size: 3rem;
+    font-family: $heading-font;
+    color: white;
+    font-size: 5rem;
     font-weight: 700;
+    margin-bottom: 50px;
+    text-shadow: 
+    5px 5px black, 
+    6px 6px black, 
+    7px 7px black, 
+    8px 8px black, 
+    9px 9px black,
+    10px 10px black,
+    11px 11px black,
+    12px 12px black,
+    13px 13px black,
+    14px 14px black,
+    15px 15px black,
+    16px 16px yellow;
+    // 17px 17px black,
+    // 18px 18px black,
+    // 19px 19px black,
+    // 20px 20px black,
 }
 
 .submit {
