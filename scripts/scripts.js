@@ -23,7 +23,7 @@ bombApp.startModal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 2;
+    bombApp.seconds = 500;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -143,6 +143,13 @@ $(".defuse-button").on("click", function(event) {
     if (bombApp.userAnswer6 === "true")
     {
         bombApp.winning();
+        $(".modal").append(
+            `<div class="modal-content modal-content-winning">
+                <h2>Bomb defused!</h2>
+                <p class="time-left">You defused the bomb with ${bombApp.seconds + 1} seconds remaining. You go Glen Coco!</p>
+                <button class="play-again-button button">Play again</button>
+            </div>`
+        );
     }
 });
 
@@ -154,6 +161,13 @@ $(".explosion-button").on("click", function (event) {
         setTimeout(function () {
             bombApp.winning();
         }, 600);
+        $(".modal").append(
+            `<div class="modal-content modal-content-winning">
+                <h2>YOU MADE IT EXPLOSELKSDFJS:!</h2>
+                <p class="time-left">You defused the bomb with ${bombApp.seconds + 1} seconds remaining. You go Glen Coco!</p>
+                <button class="play-again-button button">Play again</button>
+            </div>`
+        );
     }
 });
 
@@ -163,15 +177,7 @@ bombApp.winning = function(){
     $(".modal").removeClass("hidden");
     clearInterval(bombApp.countdown);
     $(".bomb").removeClass("bomb-slow-shake");
-    $(".modal").append(
-        `
-            <div class="modal-content modal-content-winning">
-                <h2>Bomb defused!</h2>
-                <p class="time-left">You defused the bomb with ${bombApp.seconds + 1} seconds remaining. You go Glen Coco!</p>
-                <button class="play-again-button button">Play again</button>
-            </div>          
-            `
-    );
+    
 }
 
 $(".explosion-button").on("click", function() {

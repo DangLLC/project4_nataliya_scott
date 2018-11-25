@@ -266,7 +266,7 @@ form {
   font-size: 5rem;
   font-weight: 700;
   margin-bottom: 50px;
-  text-shadow: 5px 5px black,  6px 6px black,  7px 7px black,  8px 8px black,  9px 9px black, 10px 10px black, 11px 11px black, 12px 12px black, 13px 13px black, 14px 14px black, 15px 15px black, 16px 16px yellow; }
+  text-shadow: 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black, 9px 9px black, 10px 10px black, 11px 11px black, 12px 12px black, 13px 13px black, 14px 14px black, 15px 15px black, 16px 16px #f9f253; }
 
 .submit {
   width: 100%;
@@ -348,10 +348,19 @@ form .hidden {
     -ms-flex-direction: column;
     flex-direction: column; }
 
+.defuse-button:hover {
+  border-color: #f9f253; }
+
+.explosion-button:hover {
+  border-color: red; }
+
 .button-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+
+.start-button:hover {
+  border-color: #f9f253; }
 
 .defuse-question {
   font-size: 10rem;
@@ -668,3 +677,23 @@ select::-ms-expand {
 
 .hidden {
   display: none; }
+
+.button {
+  margin: 0 20px; }
+
+.start-button:hover {
+  border-color: #f9f253; }
+
+.button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.play-again-button {
+  border-color: #f9f253; }
+
+.defuse-button:hover {
+  border-color: #f9f253; }
+
+.explosion-button:hover {
+  border-color: red; }

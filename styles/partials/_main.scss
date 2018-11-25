@@ -14,8 +14,6 @@ form {
         padding-top: 50px;
         display: flex;
         flex-direction: column;
-        // justify-content: center;
-        // border: 1px solid yellow;
         border: none;
     }
 }
@@ -45,7 +43,7 @@ form {
     13px 13px black,
     14px 14px black,
     15px 15px black,
-    16px 16px yellow;
+    16px 16px $accent-color;
     // 17px 17px black,
     // 18px 18px black,
     // 19px 19px black,
@@ -128,10 +126,21 @@ form .hidden {
     }
 }
 
+.defuse-button:hover {
+    border-color: $accent-color;
+}
+
+.explosion-button:hover {
+    border-color: red;
+}
+
 .button-container {
     display: flex;
 }
 
+.start-button:hover {
+    border-color: $accent-color;
+}
 .defuse-question {
     font-size: 10rem;
     text-transform: uppercase;
