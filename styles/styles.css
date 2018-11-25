@@ -199,8 +199,7 @@ body {
   display: flex;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: flex-end;
-  border: 1px solid black; }
+  justify-content: flex-end; }
 
 h1, h2 {
   font-family: "Rammetto One", cursive;
@@ -235,7 +234,6 @@ p {
     font-size: 4rem; } }
 
 form {
-  border: 2px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -259,8 +257,7 @@ form {
     -ms-flex-direction: column;
     flex-direction: column;
     border: none;
-    z-index: 525;
-    border: 2px solid purple; }
+    z-index: 525; }
 
 .answers-container {
   display: -webkit-box;
