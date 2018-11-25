@@ -1,7 +1,15 @@
 .button {
+    background: $white;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border: 10px solid $black;
+    font-family: 'Rammetto One', cursive;
+    text-transform: uppercase;
     margin: 0 20px;
-    background: white;
+    transition: .3s ease;
 }
+
 
 .start-button:hover {
     border-color: $accent-color;

@@ -132,7 +132,7 @@ $(".answers-container").on("click", "input", function() {
             1000);
         setTimeout(function() {
             $(`.progress-${bombApp.questionCount}`).addClass("active-q");
-        }, 1000);
+        }, 650);
     } else {
         console.log("minus 4");
         bombApp.seconds = bombApp.seconds - 4;
