@@ -282,8 +282,7 @@ form {
   font-weight: 700;
   margin-bottom: 50px;
   letter-spacing: 2px;
-  line-height: 1.6;
-  text-shadow: 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black, 9px 9px black, 10px 10px black, 11px 11px black, 12px 12px black, 13px 13px black, 14px 14px black, 15px 15px black, 16px 16px #f9f253; }
+  line-height: 1.6; }
 
 .submit {
   width: 100%;
@@ -729,7 +728,8 @@ select::-ms-expand {
   display: none; }
 
 .button {
-  margin: 0 20px; }
+  margin: 0 20px;
+  background: white; }
 
 .start-button:hover {
   border-color: #f9f253; }
