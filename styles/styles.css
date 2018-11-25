@@ -205,8 +205,7 @@ body {
   align-items: flex-start;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: flex-end;
-  border: 1px solid black; }
+  justify-content: flex-end; }
 
 h1, h2 {
   font-family: "Rammetto One", cursive;
@@ -220,7 +219,8 @@ h1 {
   line-height: 1.2; }
 
 h2 {
-  font-size: 7rem; }
+  font-size: 6rem;
+  line-height: 1.4; }
 
 .number {
   font-family: "Rammetto One", cursive;
@@ -235,6 +235,10 @@ h2 {
 
 .boom {
   font-family: "Rammetto One", cursive; }
+
+@media (max-width: 950px) {
+  h2 {
+    font-size: 5rem; } }
 
 @media (max-width: 775px) {
   h1 {
@@ -393,7 +397,12 @@ form .hidden {
   display: none; }
 
 #qa6 {
-  z-index: 400; }
+  z-index: 525;
+  border: 2px solid blue; }
+  #qa6 .defuse-question {
+    line-height: 1.2;
+    margin-bottom: 30px;
+    text-shadow: 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black, 9px 9px black, 10px 10px black, 11px 11px black, 12px 12px black, 13px 13px black, 14px 14px black, 15px 15px black, 16px 16px #f9f253; }
   #qa6 .submit {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -413,8 +422,7 @@ form .hidden {
 
 .responsive-bar {
   position: fixed;
-  padding-top: 65px;
-  border: 2px solid yellow; }
+  padding-top: 65px; }
 
 ol {
   font-family: "Rammetto One", cursive;
@@ -454,7 +462,9 @@ ol {
     font-size: 2.5rem;
     text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px #f9f253; }
   .input-container label {
-    font-size: 1.8rem; } }
+    font-size: 1.8rem; }
+  .submit {
+    margin: 0; } }
 
 @media (max-width: 768px) {
   form {
@@ -466,13 +476,17 @@ ol {
 @media (max-width: 650px) {
   form {
     width: 100%;
-    padding: 0 30px; }
+    padding: 0; }
     form .qa-fieldset {
       width: 100%;
       height: 90vh;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
       margin-top: 10vh; }
   .question p {
-    font-size: 2.5rem; }
+    font-size: 2.5rem;
+    padding: 0 25px; }
   .responsive-bar {
     position: fixed;
     top: 0;
@@ -496,22 +510,7 @@ ol {
     display: -ms-flexbox;
     display: flex; }
     ol li {
-      margin: 0 10px; } }
-
-@media (max-width: 475px) {
-  .question p {
-    line-height: 1.4; } }
-
-@media (max-width: 420px) {
-  ol li {
-    font-size: 1.8rem;
-    margin: 0 5px; }
-  .question p {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    padding: 0 20px; }
-  form {
-    padding: 0; }
+      margin: 0 10px; }
   .input-container {
     width: 100%;
     margin: 0; }
@@ -525,10 +524,22 @@ ol {
     background: ghostwhite;
     border-top: lightgrey 1px solid;
     border-bottom: lightgrey 1px solid; }
-  form .qa-fieldset {
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between; } }
+  #qa6 .defuse-question {
+    font-size: 5rem;
+    line-height: 1.4; } }
+
+@media (max-width: 475px) {
+  .question p {
+    line-height: 1.4; } }
+
+@media (max-width: 420px) {
+  ol li {
+    font-size: 1.8rem;
+    margin: 0 5px; }
+  .question p {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    padding: 0 20px; } }
 
 .bomb-container {
   position: fixed;
@@ -552,11 +563,11 @@ ol {
   width: 100px;
   background: black;
   position: absolute;
-  top: -20px;
+  top: -10px;
   right: 115px;
-  -webkit-transform: rotate(15deg);
-  -ms-transform: rotate(15deg);
-  transform: rotate(15deg); }
+  -webkit-transform: rotate(23deg);
+  -ms-transform: rotate(23deg);
+  transform: rotate(23deg); }
 
 .bomb::before {
   content: '';
@@ -564,11 +575,11 @@ ol {
   width: 30px;
   background: ghostwhite;
   position: absolute;
-  top: -65px;
-  right: 135px;
-  -webkit-transform: rotate(15deg);
-  -ms-transform: rotate(15deg);
-  transform: rotate(15deg);
+  top: -62px;
+  right: 129px;
+  -webkit-transform: rotate(23deg);
+  -ms-transform: rotate(23deg);
+  transform: rotate(23deg);
   border: 1px solid lightgrey; }
 
 .bomb-slow-shake {
@@ -806,8 +817,8 @@ ol {
 
 @media (max-width: 650px) {
   .bomb-container {
-    bottom: -245px;
-    left: -190px; }
+    bottom: -193px;
+    left: -180px; }
   .bomb {
     width: 600px;
     height: 600px; }
@@ -1007,6 +1018,12 @@ select::-ms-expand {
 .play-again-button:hover {
   border-color: #ed1c24; }
 
+.defuse-button {
+  border-color: limegreen; }
+
+.explosion-button {
+  border-color: #ed1c24; }
+
 .defuse-button:hover {
   border-color: #ed1c24; }
 
@@ -1018,4 +1035,6 @@ select::-ms-expand {
     width: 110px;
     height: 110px;
     border: 7px solid black;
-    line-height: 1.2; } }
+    line-height: 1.2; }
+  .defuse-button, .explosion-button {
+    border-color: #f9f253; } }

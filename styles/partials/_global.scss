@@ -41,7 +41,7 @@ body {
     // flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    border: 1px solid $black;
+    // border: 1px solid $black;
 }
 
 
@@ -71,8 +71,8 @@ h1 {
 }
 
 h2 {
-    font-size: 7rem;
-
+    font-size: 6rem;
+    line-height: 1.4;
 }
 .number {
     font-family: $heading-font;    
@@ -94,7 +94,13 @@ h2 {
     font-family: $heading-font;
 }
 
-//Media queries 
+//Media queries
+@media (max-width: 950px) {
+    h2 {
+        font-size: 5rem;
+    }
+}
+
 @media (max-width: 775px) {
     h1 {
         font-size: 4rem;

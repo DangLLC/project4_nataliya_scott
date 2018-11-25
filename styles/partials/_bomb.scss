@@ -23,9 +23,9 @@
     width: 100px;
     background: $black;
     position: absolute;
-    top: -20px;
+    top: -10px;
     right: 115px;
-    transform: rotate(15deg);
+    transform: rotate(23deg);
     // border: 1px solid $hover-color;
 }
 
@@ -35,9 +35,9 @@
     width: 30px;
     background: $white;
     position: absolute;
-    top: -65px;
-    right: 135px;
-    transform: rotate(15deg);
+    top: -62px;
+    right: 129px;
+    transform: rotate(23deg);
     border: 1px solid lightgrey;
 }
 
@@ -129,8 +129,8 @@
 
 @media (max-width: 650px) {
     .bomb-container {
-        bottom: -245px;
-        left: -190px;
+        bottom: -193px;
+        left: -180px;
     }
 
     .bomb {

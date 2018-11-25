@@ -23,7 +23,7 @@ bombApp.startModal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 5;
+    bombApp.seconds = 6000;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -134,7 +134,6 @@ $(".answers-container").on("click", "input", function() {
             $(`.progress-${bombApp.questionCount}`).addClass("active-q");
         }, 650);
     } else {
-        console.log("minus 4");
         bombApp.seconds = bombApp.seconds - 4;
         $(".seconds").addClass("lilshake");
         setTimeout(function () {
