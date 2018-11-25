@@ -41,7 +41,7 @@ body {
     // flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    // border: 1px solid $black;
+    border: 1px solid $black;
 }
 
 
@@ -64,10 +64,6 @@ h1, h2, {
     14px 14px $accent-color,
     15px 15px $accent-color,
     16px 16px $black;
-    // 17px 17px $black,
-    // 18px 18px $black,
-    // 19px 19px $black,
-    // 20px 20px $black,
 }
 h1 {
     font-size: 6rem;
@@ -90,13 +86,11 @@ h2 {
     z-index: -1;
 }
 
-p {
-    margin: 10px 0;
-}
+// p {
+//     margin: 10px 0;
+// }
 
 .boom {
-    // font-weight: 700;
-    // font-size: 2.2rem;
     font-family: $heading-font;
 }
 

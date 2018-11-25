@@ -2,14 +2,14 @@
 
 .bomb-container {
   position: fixed;
-    bottom: -110px;
-    left: -50px;
+    bottom: -180px;
+    left: -130px;
     z-index: 500;
 }
 
 .bomb {
-    width: 450px;
-    height: 450px;
+    width: 600px;
+    height: 600px;
     border-radius: 50%;
     position: relative;
     background: $black;
@@ -73,6 +73,10 @@
     }
 }
 
+.hidden-desktop {
+    display: none;
+}
+
 //animations
 
 @keyframes lilshake {
@@ -116,51 +120,47 @@
 }
 
 //Media queries
-@media (max-width: 800px) {
-    .bomb {
-        width: 400px;
-        height: 400px;
-    }
-
-    .bomb::after {
-        transform: rotate(10deg);
-        right: 108px;
-    }
-
-    .bomb::before {
-        transform: rotate(10deg);
+@media (max-width: 1050px) {
+    .bomb-container {
+        bottom: -237px;
+        left: -170px;
     }
 }
 
 @media (max-width: 650px) {
     .bomb-container {
-        bottom: -85px;
-        // left: -5px;
-        left: 30%;
-        z-index: 500;
+        bottom: -245px;
+        left: -190px;
     }
 
     .bomb {
-        width: 200px;
-        height: 200px;
+        width: 600px;
+        height: 600px;
     }
 
-    .bomb::after {
-        transform: rotate(10deg);
-        right: 60px;
-        height: 25px;
-        width: 50px;
+    .hidden-desktop {
+        display: block;
     }
 
-    .bomb::before {
-        transform: rotate(10deg);
-        height: 30px;
-        width: 15px;
-        top: -50px;
-        right: 71px;
+    .hidden-responsive {
+        display: none;
+    }
+
+    .seconds {
+        position: static;
     }
 
     .seconds p {
-        font-size: 3rem;
+        color: $white;
+        font-size: 2.2rem;
+        margin: 0;
+        font-family: 'Rammetto One', cursive;
+        line-height: 1;
+    }
+}
+
+@media (max-width: 420px) {
+    .seconds p {
+        font-size: 1.8rem;
     }
 }
