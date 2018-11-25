@@ -23,7 +23,7 @@ bombApp.startModal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 500;
+    bombApp.seconds = 100;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -44,8 +44,9 @@ bombApp.timer = function() {
             setTimeout(function(){
                 $(".modal").removeClass("hidden").append(`
                     <div class="modal-content modal-content-losing">
-                        <h2>YOU LOST</h2>
-                        <button class="play-again-button button">Play again</button>
+                        <h2>Time ran out... you lost!</h2>
+                        <p>Maybe you should watch some more Jeopardy?</p>
+                        <button class="play-again-button button">Play again?</button>
                     </div>          
                 `);
             }, 600);
@@ -130,6 +131,13 @@ $(".answers-container").on("click", "input", function() {
                 scrollTop: $(`#qa${bombApp.questionCount}`).offset().top
             },
             1000);
+    } else {
+        console.log("minus 4");
+        bombApp.seconds = bombApp.seconds - 4;
+        $(".seconds").addClass("lilshake");
+        setTimeout(function () {
+            $(".seconds").removeClass("lilshake");
+        }, 300);
     }
     const userAnswer6 = $("input[name=Q5Answer]:checked").val();
     bombApp.userAnswer6 = userAnswer6;
@@ -147,7 +155,7 @@ $(".defuse-button").on("click", function(event) {
             `<div class="modal-content modal-content-winning">
                 <h2>Bomb defused!</h2>
                 <p class="time-left">You defused the bomb with ${bombApp.seconds + 1} seconds remaining. You go Glen Coco!</p>
-                <button class="play-again-button button">Play again</button>
+                <button class="play-again-button button">Play again?</button>
             </div>`
         );
     }
@@ -163,9 +171,9 @@ $(".explosion-button").on("click", function (event) {
         }, 600);
         $(".modal").append(
             `<div class="modal-content modal-content-winning">
-                <h2>YOU MADE IT EXPLOSELKSDFJS:!</h2>
-                <p class="time-left">You defused the bomb with ${bombApp.seconds + 1} seconds remaining. You go Glen Coco!</p>
-                <button class="play-again-button button">Play again</button>
+                <h2>Congratulations, you destroyed the world.</h2>
+                <p class="time-left">with ${bombApp.seconds + 1} seconds remaining... even though you won. Maybe next time think about your fellow humans before you blow something up.</p>
+                <button class="play-again-button button">Play again?</button>
             </div>`
         );
     }
@@ -235,6 +243,7 @@ $(".modal").on("click", ".play-again-button", function(){
 // MAKE LABELS ACCESSIBLE DONE DONE DONE DONE
 // defuse bomb only show up after last Q. DONE DONE
 // REORG MODAL CODE DONE DONE DONE DONE DONE
+// 5 SECONDS OFF TIMER IF U choose wrong answer DONE DONE
 
 
 

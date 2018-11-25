@@ -3,7 +3,6 @@ $heading-font: 'Rammetto One', cursive;
 $body-font: 'Raleway', sans-serif;
 $accent-color: #f9f253;
 
-
 html {
     font-size: 62.5%;
 }
@@ -39,19 +38,39 @@ body {
 }
 
 
-h1, h2, h3 {
+h1, h2 {
     font-family: $heading-font;
     text-transform: uppercase;
 }
 
+h1, h2, .question p {
+    text-shadow: 
+    5px 5px yellow, 
+    6px 6px yellow, 
+    7px 7px yellow, 
+    8px 8px yellow, 
+    9px 9px yellow,
+    10px 10px yellow,
+    11px 11px yellow,
+    12px 12px yellow,
+    13px 13px yellow,
+    14px 14px yellow,
+    15px 15px yellow,
+    16px 16px black;
+    // 17px 17px black,
+    // 18px 18px black,
+    // 19px 19px black,
+    // 20px 20px black,
+}
 h1 {
-    font-size: 4rem;
+    font-size: 6rem;
+    line-height: 1.2;
 }
 
-// h2 {
-//     text-transform: uppercase;
-// }
+h2 {
+    font-size: 4rem;
 
+}
 .number {
     font-family: $heading-font;    
     -webkit-text-stroke: 5px white;
@@ -67,7 +86,3 @@ h1 {
 p {
     margin: 10px 0;
 }
-
-// .hide {
-//     display: none;
-// }

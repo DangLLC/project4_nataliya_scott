@@ -1,5 +1,15 @@
 //Form styles
 
+ul {
+    list-style: none;
+    font-size: 2rem;
+    margin: 25px 0 50px 0;;
+    li {
+        margin: 8px 0;
+        font-weight: 600;
+    }
+}
+
 form {
     // border: 2px solid white;
     display: flex;
@@ -28,9 +38,11 @@ form {
 .question p {
     font-family: $heading-font;
     color: white;
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-weight: 700;
     margin-bottom: 50px;
+    letter-spacing: 2px;
+    line-height: 1.6;
     text-shadow: 
     5px 5px black, 
     6px 6px black, 
@@ -57,7 +69,6 @@ form {
     justify-content: center;
     align-items: center;
     // border: 1px solid black;
-
 }
 .input-container {
     display: flex;
@@ -126,21 +137,6 @@ form .hidden {
     }
 }
 
-.defuse-button:hover {
-    border-color: $accent-color;
-}
-
-.explosion-button:hover {
-    border-color: red;
-}
-
-.button-container {
-    display: flex;
-}
-
-.start-button:hover {
-    border-color: $accent-color;
-}
 .defuse-question {
     font-size: 10rem;
     text-transform: uppercase;
@@ -149,9 +145,6 @@ form .hidden {
     text-align: center;
 }
 
-.button {
-    margin: 0 20px;
-}
 
 
 
