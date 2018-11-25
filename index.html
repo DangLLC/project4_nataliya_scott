@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Erica+One|Goblin+One|Rammetto+One|Raleway:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One|Raleway:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <title>BOMB TRIVIA</title>
 </head>
@@ -20,6 +20,16 @@
                 </div>
             </div>
             <!-- END BOMB -->
+            <div class="responsive-bar">
+                <ol>
+                    <li class="progress-0 active-q">1</li>
+                    <li class="progress-1">2</li>
+                    <li class="progress-2">3</li>
+                    <li class="progress-3">4</li>
+                    <li class="progress-4">5</li>
+                    <li class="progress-5">6</li>
+                </ol>
+            </div>
             <form action="">
                 <!-- FIELDSET 1 -->
                 <fieldset class="qa-fieldset" id="qa0">
@@ -95,14 +105,6 @@
             </form>
             <!-- end form -->  
             
-            <ol>
-                <li class="progress-0 active-q">1</li>
-                <li class="progress-1">2</li>
-                <li class="progress-2">3</li>
-                <li class="progress-3">4</li>
-                <li class="progress-4">5</li>
-                <li class="progress-5">6</li>
-            </ol>
             
         </div> 
         <!-- END WRAPPER -->
@@ -112,8 +114,8 @@
                 <!-- categories -->
                 <h1>Bomb dot com</h1>
                 <ul>
-                    <li>Answer 6 trivia questions before the timer runs out.</li>
-                    <li>5 seconds will be deducted for any wrong answer.</li>
+                    <li>Answer <span class="boom">6 trivia questions</span> before the timer runs out.</li>
+                    <li><span class="boom">5 seconds</span> will be deducted for any wrong answer.</li>
                     <li>Select a category and difficulty. Press start to begin.</li>
                 </ul>
                 <div class="select-container">

@@ -12,7 +12,7 @@
 
 
 .start-button:hover {
-    border-color: $accent-color;
+    border-color: $hover-color;
 }
 
 .button-container {
@@ -20,14 +20,24 @@
 }
 
 .play-again-button:hover {
-    border-color: $accent-color;
+    border-color: $hover-color;
 }
 
 .defuse-button:hover {
-    border-color: $accent-color;
+    border-color: $hover-color;
 }
 
 .explosion-button:hover {
-    border-color: red;
+    border-color: $hover-color;
+}
+
+@media (max-width: 350px) {
+    .button {
+        width: 110px;
+        height: 110px;
+        border: 7px solid $black;
+        line-height: 1.2;
+        // background: red;
+    }
 }
 

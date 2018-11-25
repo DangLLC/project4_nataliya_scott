@@ -2,7 +2,9 @@
 $heading-font: 'Rammetto One', cursive;
 $body-font: 'Raleway', sans-serif;
 $accent-color: #f9f253;
-$white: floralwhite;
+$transaccent: rgba(249,242,83,0.8); 
+$hover-color: #ed1c24;
+$white: ghostwhite;
 $transwhite: rgba(255,250,240, 0.5);
 $black: black;
 
@@ -92,15 +94,57 @@ p {
     margin: 10px 0;
 }
 
+.boom {
+    // font-weight: 700;
+    // font-size: 2.2rem;
+    font-family: $heading-font;
+}
+
 //Media queries 
 @media (max-width: 775px) {
     h1 {
         font-size: 4rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 4rem;
+        line-height: 1.4;
     }
 }
 
 @media (max-width: 650px) {
     .wrapper {
-        // width: 100vw;
+        flex-direction: column;
+        width: 100vw;
+    }
+}
+
+@media (max-width: 420px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+    h1, h2, {
+    text-shadow: 
+        1px 1px $accent-color, 
+        2px 2px $accent-color, 
+        3px 3px $accent-color, 
+        4px 4px $accent-color, 
+        5px 5px $accent-color,
+        6px 6px $black;
+    }
+}
+
+@media (max-width: 350px) {
+    h1 {
+        font-size: 2.6rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    .boom {
+        font-family: $body-font;
     }
 }
