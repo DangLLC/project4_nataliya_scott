@@ -158,6 +158,9 @@ img {
   clip: rect(0 0 0);
   overflow: hidden; }
 
+ul, ol {
+  list-style: none; }
+
 /* /END GENERAL STYLING */
 html {
   font-size: 62.5%; }
@@ -197,16 +200,18 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: flex-end;
-  border: 1px solid black; }
+  justify-content: flex-end; }
 
 h1, h2 {
   font-family: "Rammetto One", cursive;
   text-transform: uppercase; }
 
-h1, h2, .question p {
+h1, h2 {
   text-shadow: 5px 5px yellow,  6px 6px yellow,  7px 7px yellow,  8px 8px yellow,  9px 9px yellow, 10px 10px yellow, 11px 11px yellow, 12px 12px yellow, 13px 13px yellow, 14px 14px yellow, 15px 15px yellow, 16px 16px black; }
 
 h1 {
@@ -214,7 +219,7 @@ h1 {
   line-height: 1.2; }
 
 h2 {
-  font-size: 4rem; }
+  font-size: 7rem; }
 
 .number {
   font-family: "Rammetto One", cursive;
@@ -235,7 +240,6 @@ p {
     font-size: 4rem; } }
 
 form {
-  border: 2px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -259,8 +263,7 @@ form {
     -ms-flex-direction: column;
     flex-direction: column;
     border: none;
-    z-index: 525;
-    border: 2px solid purple; }
+    z-index: 525; }
 
 .answers-container {
   display: -webkit-box;
@@ -282,7 +285,8 @@ form {
   font-weight: 700;
   margin-bottom: 50px;
   letter-spacing: 2px;
-  line-height: 1.6; }
+  line-height: 1.6;
+  text-shadow: 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black, 9px 9px black, 10px 10px black, 11px 11px black, 12px 12px black, 13px 13px black, 14px 14px black, 15px 15px black, 16px 16px #f9f253; }
 
 .submit {
   width: 100%;
@@ -322,6 +326,8 @@ form {
     -o-transition: all .2s ease;
     transition: all .2s ease;
     border: 1px solid transparent; }
+    .input-container label:hover {
+      background: #f9f253; }
 
 input:focus + label {
   border: 1px solid black; }
@@ -403,6 +409,19 @@ form .hidden {
       width: 100%; }
   .question p {
     font-size: 2.5rem; } }
+
+ol {
+  position: fixed;
+  font-family: "Rammetto One", cursive;
+  color: rgba(255, 250, 240, 0.5);
+  font-size: 2.2rem;
+  padding-top: 65px; }
+  ol li {
+    margin: 0 10px; }
+
+.active-q {
+  color: white;
+  text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px #f9f253; }
 
 .bomb-container {
   position: fixed;

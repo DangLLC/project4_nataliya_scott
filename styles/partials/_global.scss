@@ -33,8 +33,10 @@ body {
     margin: 0 auto;
     position: relative;
     display: flex;
+    // flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-end;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 
@@ -43,7 +45,7 @@ h1, h2 {
     text-transform: uppercase;
 }
 
-h1, h2, .question p {
+h1, h2, {
     text-shadow: 
     5px 5px yellow, 
     6px 6px yellow, 
@@ -68,7 +70,7 @@ h1 {
 }
 
 h2 {
-    font-size: 4rem;
+    font-size: 7rem;
 
 }
 .number {
