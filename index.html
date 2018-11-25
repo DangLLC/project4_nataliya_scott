@@ -9,7 +9,6 @@
     <title>BOMB TRIVIA</title>
 </head>
 <body>
-    
     <main>
         <div class="wrapper">
             <!-- START BOMB -->
@@ -24,7 +23,7 @@
             <form action="">
                 <!-- FIELDSET 1 -->
                 <fieldset class="qa-fieldset" id="qa0">
-                    <h3>1</h3>
+                    <!-- <p class="number">1</p> -->
                     <div class="question">
                         <p></p>
                     </div>
@@ -34,7 +33,7 @@
                 </fieldset>
                 <!-- FIELDSET 2 -->
                 <fieldset class="qa-fieldset next-q hidden" id="qa1">
-                    <h3>2</h3>
+                    <!-- <p class="number">2</p> -->
                     <div class="question">
                         <p></p>
                     </div>
@@ -44,7 +43,7 @@
                 </fieldset>
                 <!-- FIELDSET 3 -->
                 <fieldset class="qa-fieldset next-q hidden" id="qa2">
-                    <h3>3</h3>
+                    <!-- <p class="number">3</p> -->
                     <div class="question">
                         <p></p>
                     </div>
@@ -54,7 +53,7 @@
                 </fieldset>
                 <!-- FIELDSET 4 -->
                 <fieldset class="qa-fieldset next-q hidden" id="qa3">
-                    <h3>4</h3>
+                    <!-- <p class="number">4</p> -->
                     <div class="question">
                         <p></p>
                     </div>
@@ -64,7 +63,7 @@
                 </fieldset>
                 <!-- FIELDSET 5 -->
                 <fieldset class="qa-fieldset next-q hidden" id="qa4">
-                    <h3>5</h3> 
+                    <!-- <p class="number">5</p>  -->
                     <div class="question">
                         <p></p>
                     </div>
@@ -74,7 +73,7 @@
                 </fieldset>
                 <!-- FIELDSET 6 -->
                 <fieldset class="qa-fieldset next-q hidden" id="qa5">
-                    <h3>6</h3>
+                    <!-- <p class="number">6</p> -->
                     <div class="question">
                         <p></p>
                     </div>
@@ -82,11 +81,17 @@
                         <!-- answers populated here -->
                     </div>
                 </fieldset>
+
+
+
+
                 <fieldset class="qa-fieldset hidden defuse" id="qa6">
                     <div class="submit">
-                        <p>DEFUSE BOMB?</p>
-                        <input type="submit" value="Yes, please." class="defuse-button">
-                        <button class="explosion-button">No</button>
+                        <p class="defuse-question">Defuse bomb?</p>
+                        <div class="button-container">
+                            <button class="button defuse-button">Yes, please.</button>
+                            <button class="button explosion-button">Meh.</button>
+                        </div>
                     </div>
                 </fieldset>
             </form>
@@ -98,9 +103,11 @@
             <div class="modal-content modal-content-start">
                 <!-- categories -->
                 <h1>Bomb dot com</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum non sem in vehicula. Ut lobortis volutpat
-                    diam eget auctor. Sed sagittis, urna id semper pellentesque, nulla neque mollis justo, in pellentesque eros lacus
-                    vitae tellus. Aenean feugiat justo leo, in suscipit ex accumsan vitae. In in lobortis augue. </p>
+                <ul>
+                    <li>Answer 6 trivia questions before the timer runs out.</li>
+                    <li>5 seconds will be deducted for any wrong answer.</li>
+                    <li>Select a category and difficulty. Press start to begin.</li>
+                </ul>
                 <div class="select-container">
                     <div class="select select-category">
                         <label for="category">Category</label>
@@ -114,7 +121,6 @@
                         </select>
                     </div>
                     <!-- difficulty level -->
-                    
                     <div class="select select-difficulty">
                         <label for="difficulty">Difficulty</label>
                         <select id="difficulty">
@@ -123,36 +129,11 @@
                         </select>
                     </div>
                 </div> 
-                <button class="button">Start</button>
+                <button class="button start-button">Start</button>
             </div>
         </div>
-    <!-- </div> -->
-
-
-        <!-- <div class="modal game-end-modal hidden">
-
-        </div> -->
-
-<!-- 
-
-        <div class="modal winning-modal hide">
-            <div class="modal-content">
-                <p>YOU WON</p>
-                <button class="play-again-button">Play again</button>
-            </div>
-        </div>
-
-        <div class="modal losing-modal hide">
-            <div class="modal-content">
-                <p>YOU LOST</p>
-                <button class="play-again-button">Play again</button>
-            </div>
-        </div> -->
-
     </main>
     <!-- END MAIN -->
-
-
     <!-- jQuery CDN -->
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
     <!-- CUSTOM SCRIPTS -->

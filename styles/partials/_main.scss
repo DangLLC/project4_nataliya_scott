@@ -1,5 +1,15 @@
 //Form styles
 
+ul {
+    list-style: none;
+    font-size: 2rem;
+    margin: 25px 0 50px 0;;
+    li {
+        margin: 8px 0;
+        font-weight: 600;
+    }
+}
+
 form {
     // border: 2px solid white;
     display: flex;
@@ -11,10 +21,9 @@ form {
         position: relative;
         width: 80%;
         height: 100vh;
-        padding-top: 150px;
+        padding-top: 50px;
         display: flex;
         flex-direction: column;
-        // border: 1px solid yellow;
         border: none;
     }
 }
@@ -27,8 +36,30 @@ form {
 }
 
 .question p {
-    font-size: 3rem;
+    font-family: $heading-font;
+    color: white;
+    font-size: 4.5rem;
     font-weight: 700;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    text-shadow: 
+    5px 5px black, 
+    6px 6px black, 
+    7px 7px black, 
+    8px 8px black, 
+    9px 9px black,
+    10px 10px black,
+    11px 11px black,
+    12px 12px black,
+    13px 13px black,
+    14px 14px black,
+    15px 15px black,
+    16px 16px $accent-color;
+    // 17px 17px black,
+    // 18px 18px black,
+    // 19px 19px black,
+    // 20px 20px black,
 }
 
 .submit {
@@ -38,7 +69,6 @@ form {
     justify-content: center;
     align-items: center;
     // border: 1px solid black;
-
 }
 .input-container {
     display: flex;
@@ -99,12 +129,21 @@ form .hidden {
 
 .defuse {
     z-index: 400;
-    width: 100vw;
-    background: darkgrey;
-    color: red;
-    font-size: 20rem;
+    // width: 100vw;
+    // background: red;
+    .submit {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
+.defuse-question {
+    font-size: 10rem;
+    text-transform: uppercase;
+    font-family: $heading-font;
+    color: white;
+    text-align: center;
+}
 
 
 

@@ -1,0 +1,24 @@
+.button {
+    margin: 0 20px;
+}
+
+.start-button:hover {
+    border-color: $accent-color;
+}
+
+.button-container {
+    display: flex;
+}
+
+.play-again-button:hover {
+    border-color: $accent-color;
+}
+
+.defuse-button:hover {
+    border-color: $accent-color;
+}
+
+.explosion-button:hover {
+    border-color: red;
+}
+
