@@ -23,7 +23,7 @@ bombApp.startModal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 100;
+    bombApp.seconds = 60;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -117,13 +117,12 @@ bombApp.shuffle = function(array) {
     }
 }
 
-
 bombApp.questionCount = 0;
-
 $(".answers-container").on("click", "input", function() {
     const userAnswer = $(`input[name=Q${bombApp.questionCount}Answer]:checked`).val();
     console.log(userAnswer);
     if (userAnswer === "true") {
+        $(`.progress-${bombApp.questionCount}`).removeClass("active-q");
         bombApp.questionCount++;
         $(`#qa${bombApp.questionCount}`).removeClass("hidden");
         $("html, body").animate(
@@ -131,6 +130,9 @@ $(".answers-container").on("click", "input", function() {
                 scrollTop: $(`#qa${bombApp.questionCount}`).offset().top
             },
             1000);
+        setTimeout(function() {
+            $(`.progress-${bombApp.questionCount}`).addClass("active-q");
+        }, 650);
     } else {
         console.log("minus 4");
         bombApp.seconds = bombApp.seconds - 4;
@@ -185,7 +187,6 @@ bombApp.winning = function(){
     $(".modal").removeClass("hidden");
     clearInterval(bombApp.countdown);
     $(".bomb").removeClass("bomb-slow-shake");
-    
 }
 
 $(".explosion-button").on("click", function() {
@@ -211,7 +212,8 @@ $(".modal").on("click", ".play-again-button", function(){
 
 
 
-
+// TO DO
+// WES BOS STUFF
 
 
 
@@ -244,6 +246,7 @@ $(".modal").on("click", ".play-again-button", function(){
 // defuse bomb only show up after last Q. DONE DONE
 // REORG MODAL CODE DONE DONE DONE DONE DONE
 // 5 SECONDS OFF TIMER IF U choose wrong answer DONE DONE
+// WRITE GAME INSTRUCTIONS AND MODAL INSTRUCTIONS
 
 
 
@@ -261,7 +264,6 @@ $(".modal").on("click", ".play-again-button", function(){
 // start game
 // start-game modal shows
 // play game
-
 // timer runs out / lose game
 // show modal
 // show "play again" for losing contents
