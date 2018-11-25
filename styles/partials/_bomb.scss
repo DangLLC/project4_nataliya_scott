@@ -5,7 +5,6 @@
     bottom: -110px;
     left: -50px;
     z-index: 500;
-
 }
 
 .bomb {
@@ -52,8 +51,8 @@
 
 .seconds {
     position: absolute;
-    top: 25%;
-    left: 30%;
+    top: 30%;
+    left: 37%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,26 +111,55 @@
   40% {background: yellow;}
   60% {background: orange;}
   80% {background: red;}
-  // 30% {
-  //   transform: scale(3);
-  // }
-  // 40% {
-  //   transform: scale(4);
-  // }
-  // 50% {
-  //   background: yellow;
-  // }
-  // 60% {
-  //   transform: scale(6);
-  // }
-  // 70% {
-  //   transform: scale(7);
-  // }
-  // 80% {
-  //   background: orange;
-  // }
-  // 90% {
-  //   transform: scale(9);
-  // }
   100% {transform: scale(10)}
+}
+
+//Media queries
+@media (max-width: 800px) {
+    .bomb {
+        width: 400px;
+        height: 400px;
+    }
+
+    .bomb::after {
+        transform: rotate(10deg);
+        right: 108px;
+    }
+
+    .bomb::before {
+        transform: rotate(10deg);
+    }
+}
+
+@media (max-width: 650px) {
+    .bomb-container {
+        bottom: -85px;
+        // left: -5px;
+        left: 30%;
+        z-index: 500;
+    }
+
+    .bomb {
+        width: 200px;
+        height: 200px;
+    }
+
+    .bomb::after {
+        transform: rotate(10deg);
+        right: 60px;
+        height: 25px;
+        width: 50px;
+    }
+
+    .bomb::before {
+        transform: rotate(10deg);
+        height: 30px;
+        width: 15px;
+        top: -50px;
+        right: 71px;
+    }
+
+    .seconds p {
+        font-size: 3rem;
+    }
 }

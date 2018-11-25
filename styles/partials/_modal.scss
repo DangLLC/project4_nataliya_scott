@@ -48,6 +48,16 @@
     z-index: 450;
 }
 
+ul {
+    list-style: none;
+    font-size: 2rem;
+    margin: 25px 0 50px 0;;
+    li {
+        margin: 8px 0;
+        font-weight: 600;
+    }
+}
+
 select {
    margin: 10px;
    width: 250px;
@@ -81,4 +91,33 @@ select::-ms-expand {
 
 .hidden {
     display: none;
+}
+
+//Media Queries
+@media (max-width: 1040px) {
+    .modal {
+        padding: 20px 50px;
+    }
+}
+
+@media (max-width: 775px) {
+    .modal {
+        padding: 20px 50px;
+    }
+
+    ul {
+        font-size: 1.8rem;
+    }
+
+}
+
+@media (max-width: 730px) {
+    .select-container {
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+
+    ul {
+        margin-bottom: 25px;
+    }
 }
