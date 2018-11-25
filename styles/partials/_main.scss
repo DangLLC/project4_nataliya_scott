@@ -1,17 +1,7 @@
 //Form styles
 
-ul {
-    list-style: none;
-    font-size: 2rem;
-    margin: 25px 0 50px 0;;
-    li {
-        margin: 8px 0;
-        font-weight: 600;
-    }
-}
-
 form {
-    // border: 2px solid white;
+    border: 2px solid white;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -25,6 +15,8 @@ form {
         display: flex;
         flex-direction: column;
         border: none;
+        z-index: 525;
+        border: 2px solid purple;
     }
 }
 
@@ -127,6 +119,53 @@ form .hidden {
     color: white;
     text-align: center;
 }
+
+
+// Media Queries
+@media (max-width: 1050px) {
+    form {
+        justify-content: flex-end;
+    }
+
+    .question p {
+        font-size: 4rem;
+    }
+    
+    .answers-container { 
+        // flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .input-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 900px) {
+    .question p {
+        margin-bottom: 30px;
+        font-size: 3rem;
+    }
+
+    form .qa-fieldset {
+        padding-top: 25px;
+    }
+}
+
+@media (max-width: 650px) {
+    form {
+        width: 100%;
+        .qa-fieldset {
+            width: 100%;
+        }
+    } 
+
+    .question p {
+        font-size: 2.5rem;
+    }
+}
+
 
 
 
