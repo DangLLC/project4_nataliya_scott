@@ -158,6 +158,9 @@ img {
   clip: rect(0 0 0);
   overflow: hidden; }
 
+ul, ol {
+  list-style: none; }
+
 /* /END GENERAL STYLING */
 html {
   font-size: 62.5%; }
@@ -197,28 +200,30 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: flex-end;
-  border: 1px solid black; }
+  justify-content: flex-end; }
 
 h1, h2 {
   font-family: "Rammetto One", cursive;
   text-transform: uppercase; }
 
-h1, h2, .question p {
-  text-shadow: 5px 5px yellow,  6px 6px yellow,  7px 7px yellow,  8px 8px yellow,  9px 9px yellow, 10px 10px yellow, 11px 11px yellow, 12px 12px yellow, 13px 13px yellow, 14px 14px yellow, 15px 15px yellow, 16px 16px black; }
+h1, h2 {
+  text-shadow: 5px 5px #f9f253, 6px 6px #f9f253, 7px 7px #f9f253, 8px 8px #f9f253, 9px 9px #f9f253, 10px 10px #f9f253, 11px 11px #f9f253, 12px 12px #f9f253, 13px 13px #f9f253, 14px 14px #f9f253, 15px 15px #f9f253, 16px 16px black; }
 
 h1 {
   font-size: 6rem;
   line-height: 1.2; }
 
 h2 {
-  font-size: 4rem; }
+  font-size: 7rem; }
 
 .number {
   font-family: "Rammetto One", cursive;
-  -webkit-text-stroke: 5px white;
+  -webkit-text-stroke: 5px floralwhite;
   font-size: 70rem;
   line-height: 1;
   position: absolute;
@@ -235,7 +240,6 @@ p {
     font-size: 4rem; } }
 
 form {
-  border: 2px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -259,8 +263,7 @@ form {
     -ms-flex-direction: column;
     flex-direction: column;
     border: none;
-    z-index: 525;
-    border: 2px solid purple; }
+    z-index: 525; }
 
 .answers-container {
   display: -webkit-box;
@@ -277,7 +280,7 @@ form {
 
 .question p {
   font-family: "Rammetto One", cursive;
-  color: white;
+  color: floralwhite;
   font-size: 4.5rem;
   font-weight: 700;
   margin-bottom: 50px;
@@ -322,7 +325,12 @@ form {
     -webkit-transition: all .2s ease;
     -o-transition: all .2s ease;
     transition: all .2s ease;
-    border: 1px solid transparent; }
+    border: 1px solid transparent;
+    -webkit-transition: .5s ease;
+    -o-transition: .5s ease;
+    transition: .5s ease; }
+    .input-container label:hover {
+      background: #f9f253; }
 
 input:focus + label {
   border: 1px solid black; }
@@ -369,7 +377,7 @@ form .hidden {
   font-size: 10rem;
   text-transform: uppercase;
   font-family: "Rammetto One", cursive;
-  color: white;
+  color: floralwhite;
   text-align: center; }
 
 @media (max-width: 1050px) {
@@ -405,6 +413,19 @@ form .hidden {
   .question p {
     font-size: 2.5rem; } }
 
+ol {
+  position: fixed;
+  font-family: "Rammetto One", cursive;
+  color: rgba(255, 250, 240, 0.5);
+  font-size: 2.2rem;
+  padding-top: 65px; }
+  ol li {
+    margin: 0 10px; }
+
+.active-q {
+  color: floralwhite;
+  text-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px #f9f253; }
+
 .bomb-container {
   position: fixed;
   bottom: -110px;
@@ -437,7 +458,7 @@ form .hidden {
   content: '';
   height: 60px;
   width: 30px;
-  background: white;
+  background: floralwhite;
   position: absolute;
   top: -65px;
   right: 135px;
@@ -469,7 +490,7 @@ form .hidden {
   align-items: center; }
 
 .seconds p {
-  color: white;
+  color: floralwhite;
   font-size: 7rem;
   margin: 0;
   font-family: 'Rammetto One', cursive; }
@@ -714,7 +735,7 @@ form .hidden {
   width: 80vw;
   min-height: 90vh;
   padding: 40px 100px;
-  background: white;
+  background: floralwhite;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -753,14 +774,6 @@ form .hidden {
     font-weight: bold;
     margin: 50px 0; }
 
-.button {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  border: 10px solid black;
-  font-family: 'Rammetto One', cursive;
-  text-transform: uppercase; }
-
 .start-modal {
   z-index: 550; }
 
@@ -768,7 +781,6 @@ form .hidden {
   z-index: 450; }
 
 ul {
-  list-style: none;
   font-size: 2rem;
   margin: 25px 0 50px 0; }
   ul li {
@@ -780,12 +792,15 @@ select {
   width: 250px;
   padding: 10px 5px;
   font-size: 1.8rem;
-  border: 5px solid black;
+  border: 10px solid black;
   border-radius: 40px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  text-align: center; }
+  text-align: center;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease; }
   select:hover {
     border-color: #f9f253; }
 
@@ -830,7 +845,17 @@ select::-ms-expand {
     margin-bottom: 25px; } }
 
 .button {
-  margin: 0 20px; }
+  background: floralwhite;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border: 10px solid black;
+  font-family: 'Rammetto One', cursive;
+  text-transform: uppercase;
+  margin: 0 20px;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease; }
 
 .start-button:hover {
   border-color: #f9f253; }

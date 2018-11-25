@@ -1,7 +1,7 @@
 //Form styles
 
 form {
-    border: 2px solid white;
+    // border: 2px solid $white;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -16,7 +16,7 @@ form {
         flex-direction: column;
         border: none;
         z-index: 525;
-        border: 2px solid purple;
+        // border: 2px solid purple;
     }
 }
 
@@ -29,29 +29,29 @@ form {
 
 .question p {
     font-family: $heading-font;
-    color: white;
+    color: $white;
     font-size: 4.5rem;
     font-weight: 700;
     margin-bottom: 50px;
     letter-spacing: 2px;
     line-height: 1.6;
     text-shadow: 
-    5px 5px black, 
-    6px 6px black, 
-    7px 7px black, 
-    8px 8px black, 
-    9px 9px black,
-    10px 10px black,
-    11px 11px black,
-    12px 12px black,
-    13px 13px black,
-    14px 14px black,
-    15px 15px black,
+    5px 5px $black, 
+    6px 6px $black, 
+    7px 7px $black, 
+    8px 8px $black, 
+    9px 9px $black,
+    10px 10px $black,
+    11px 11px $black,
+    12px 12px $black,
+    13px 13px $black,
+    14px 14px $black,
+    15px 15px $black,
     16px 16px $accent-color;
-    // 17px 17px black,
-    // 18px 18px black,
-    // 19px 19px black,
-    // 20px 20px black,
+    // 17px 17px $black,
+    // 18px 18px $black,
+    // 19px 19px $black,
+    // 20px 20px $black,
 }
 
 .submit {
@@ -60,7 +60,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 1px solid black;
+    // border: 1px solid $black;
 }
 .input-container {
     display: flex;
@@ -79,15 +79,19 @@ form {
         font-weight: 600;
         text-align: center;
         border-radius: 50px;
-        background-color: floralwhite;
-        box-shadow: 8px 8px black;
+        background-color: $white;
+        box-shadow: 8px 8px $black;
         transition: all .2s ease; 
         border: 1px solid transparent;
+        transition: .5s ease;
+        &:hover {
+            background: $accent-color;
+        }
     }
 }
 
 input:focus + label {
-    border: 1px solid black;
+    border: 1px solid $black;
 }
 input[type=submit] {
     border: 5px solid transparent;
@@ -101,18 +105,18 @@ input[type=submit] {
     width: 100%;
     padding: 15px;
     margin: 0 10px;
-    color: floralwhite;
+    color: $white;
     font-weight: bold;
-    border: 2px solid black;
+    border: 2px solid $black;
     border-radius: 15px;
-    box-shadow: 5px 5px floralwhite;
+    box-shadow: 5px 5px $white;
     background: transparent;
-    background-color: black;
+    background-color: $black;
 }
 
 input[type=radio]:checked+label {
-    background: #f9f253;
-    box-shadow: 4px 4px black;
+    background: $accent-color;
+    box-shadow: 4px 4px $black;
 }
 
 form .hidden {
@@ -133,7 +137,7 @@ form .hidden {
     font-size: 10rem;
     text-transform: uppercase;
     font-family: $heading-font;
-    color: white;
+    color: $white;
     text-align: center;
 }
 
@@ -185,13 +189,34 @@ form .hidden {
 
 
 
+ol {
+    // display: flex;
+    position: fixed;
+    font-family: $heading-font;
+    color: $transwhite;
+    font-size: 2.2rem;
+    padding-top: 65px;
+    // align-self: flex-startx;
+    li {
+        margin: 0 10px;
+    }
+
+}
+
+.active-q {
+    color: $white;
+    text-shadow: 
+    1px 1px $black,
+    2px 2px $black,
+    3px 3px $black,
+    4px 4px $accent-color;
+}
+
 
 
 // ** MOST IMPORTANT **
-// WRITE GAME INSTRUCTIONS AND MODAL INSTRUCTIONS
 // RESPONSIVE
 // STYLE MODALS
-// FONTS
 
 
 
