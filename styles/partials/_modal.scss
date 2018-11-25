@@ -58,8 +58,10 @@ select {
    appearance: none;
    text-align: center;
    transition: .3s ease;
+   background: $white;
    &:hover {
-       border-color: $accent-color;
+       border-color: $hover-color;
+       cursor: pointer;
    }
 }
 
@@ -102,7 +104,7 @@ select::-ms-expand {
 
 }
 
-@media (max-width: 730px) {
+@media (max-width: 768px) {
     .select-container {
         flex-direction: column;
         margin-bottom: 25px;
@@ -110,5 +112,77 @@ select::-ms-expand {
 
     ul {
         margin-bottom: 25px;
+    }
+
+    .modal {
+        width: 100vw;
+        min-height: 100vh;
+        border: none;
+        border-radius: 0;
+        padding: 20px 20px;
+    }  
+
+    .select label {
+        // margin: 10px;
+        width: 100vw;
+        padding: 10px 5px;
+        font-size: 1.8rem;
+        background: $transaccent;
+        // color: white;
+        // border-top: 5px solid $black;
+        // border-bottom: 5px solid $black;
+        
+    }
+
+    select {
+        border: 0;
+        border-radius: 0;
+        // border: 5px solid black;
+        border-bottom: 1px solid $black;
+        width: 100vw;
+        margin: 0;
+        &:hover {
+            border-color: $black;
+        }
+    }
+
+    .select-category {
+        border-top: 1px solid $black;
+    }
+}
+
+@media (max-width: 350px) {
+    ul {
+        font-size: 1.6rem;
+        margin: 25px 0 25px 0;;
+        // li {
+        //     margin: 8px 0;
+        //     font-weight: 600;
+        // }
+    }
+
+    .select label {
+        // margin: 10px;
+        width: 100vw;
+        padding: 10px 5px;
+        font-size: 1.6rem;
+        background: $transaccent;
+        // color: white;
+        // border-top: 5px solid $black;
+        // border-bottom: 5px solid $black;
+        
+    }
+
+    select {
+        font-size: 1.6rem;
+        border: 0;
+        border-radius: 0;
+        // border: 5px solid black;
+        border-bottom: 1px solid $black;
+        width: 100vw;
+        margin: 0;
+        &:hover {
+            border-color: $black;
+        }
     }
 }

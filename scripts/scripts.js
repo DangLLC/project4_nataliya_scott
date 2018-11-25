@@ -23,7 +23,7 @@ bombApp.startModal = function() {
 }
 
 bombApp.timer = function() {
-    bombApp.seconds = 60;
+    bombApp.seconds = 3000;
     bombApp.countdown = window.setInterval(function () {
         $(".seconds p").html(`${bombApp.seconds}`);
         bombApp.seconds = bombApp.seconds - 1;
@@ -173,7 +173,7 @@ $(".explosion-button").on("click", function (event) {
         }, 600);
         $(".modal").append(
             `<div class="modal-content modal-content-winning">
-                <h2>Congratulations, you destroyed the world.</h2>
+                <h2>Congrats, you destroyed the world.</h2>
                 <p class="time-left">with ${bombApp.seconds + 1} seconds remaining... even though you won. Maybe next time think about your fellow humans before you blow something up.</p>
                 <button class="play-again-button button">Play again?</button>
             </div>`

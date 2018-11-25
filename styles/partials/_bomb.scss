@@ -26,7 +26,7 @@
     top: -20px;
     right: 115px;
     transform: rotate(15deg);
-    // border: 1px solid red;
+    // border: 1px solid $hover-color;
 }
 
 .bomb::before {
@@ -46,7 +46,8 @@
 }
 
 .bomb-explode {
-  animation: explode .6s;
+    animation: explode .6s;
+    z-index: 1000;
 }
 
 .seconds {
@@ -68,7 +69,7 @@
 .lilshake {
     animation: lilshake .2s;
     p {
-        color: red;
+        color: $hover-color;
     }
 }
 
@@ -107,10 +108,10 @@
 
 @keyframes explode {
   0% {transform: scale(0.85);}
-  20% {background: red;}
+  20% {background: $hover-color;}
   40% {background: yellow;}
   60% {background: orange;}
-  80% {background: red;}
+  80% {background: $hover-color;}
   100% {transform: scale(10)}
 }
 
