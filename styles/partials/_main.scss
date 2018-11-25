@@ -11,11 +11,12 @@ form {
         position: relative;
         width: 80%;
         height: 100vh;
-        padding-top: 50px;
+        padding: 50px 0 0 0;
         display: flex;
         flex-direction: column;
         border: none;
         z-index: 525;
+        margin: 0;
         // border: 2px solid purple;
     }
 }
@@ -25,12 +26,13 @@ form {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    // border: 2px green solid;
 }
 
 .question p {
     font-family: $heading-font;
     color: $white;
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 700;
     margin-bottom: 50px;
     letter-spacing: 2px;
@@ -56,12 +58,12 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 1px solid $black;
 }
 .input-container {
     display: flex;
     width: 40%;
     margin: 5px;
+    // border: 2px solid blue;
     input {
         opacity: 0;
         width: 0;
@@ -120,7 +122,25 @@ form .hidden {
 }
 
 #qa6 {
-    z-index: 400;
+    z-index: 525;
+    border: 2px solid blue;
+    .defuse-question {
+        line-height: 1.2;
+        margin-bottom: 30px;
+        text-shadow: 
+        5px 5px $black, 
+        6px 6px $black, 
+        7px 7px $black, 
+        8px 8px $black, 
+        9px 9px $black,
+        10px 10px $black,
+        11px 11px $black,
+        12px 12px $black,
+        13px 13px $black,
+        14px 14px $black,
+        15px 15px $black,
+        16px 16px $accent-color;
+    }
     .submit {
         display: flex;
         flex-direction: column;
@@ -139,7 +159,6 @@ form .hidden {
 .responsive-bar {
     position: fixed;
     padding-top: 65px;
-    border: 2px solid black;
 }
 
 ol {
@@ -165,14 +184,19 @@ ol {
 @media (max-width: 1050px) {
     form {
         justify-content: flex-end;
+        margin-right: 50px;
+    }
+
+    form .qa-fieldset {
+        padding-top: 25px;
     }
 
     .question p {
-        font-size: 4rem;
+        font-size: 3.3rem;
+        margin-bottom: 20px;
     }
     
     .answers-container { 
-        // flex-wrap: nowrap;
         flex-direction: column;
         justify-content: flex-end;
     }
@@ -184,28 +208,6 @@ ol {
 
 @media (max-width: 900px) {
     .question p {
-        margin-bottom: 30px;
-        font-size: 3rem;
-    }
-
-    form .qa-fieldset {
-        padding-top: 25px;
-    }
-}
-
-@media (max-width: 650px) {
-    form {
-        width: 100%;
-        padding: 0 30px;
-        .qa-fieldset {
-            width: 100%;
-            height: 90vh;
-            // border: 2px solid red;
-            margin-top: 10vh;
-        }
-    } 
-
-    .question p {
         font-size: 2.5rem;
         text-shadow: 
         1px 1px $black, 
@@ -216,25 +218,83 @@ ol {
         6px 6px $accent-color,
     }
 
+    .input-container label {
+        font-size: 1.8rem;
+    }
+
+    .submit {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 100%;
+        padding: 0 30px;
+        .qa-fieldset {
+            width: 100%;
+        }
+    } 
+}
+
+@media (max-width: 650px) {
+    form {
+        width: 100%;
+        padding: 0;
+        .qa-fieldset {
+            width: 100%;
+            height: 90vh;
+            justify-content: space-between;
+            margin-top: 10vh;
+        }
+    } 
+
+    .question p {
+        font-size: 2.5rem;
+        padding: 0 25px;
+    }
+
     .responsive-bar {
         position: fixed;
         top: 0;
         height: 10vh;
         width: 100vw;
-        padding-top: 0;
+        padding: 0 30px;
         border: 2px solid black;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         background: $black;
         z-index: 530;
     }
 
     ol {
         display: flex;
-        align-content: center;
+        // align-items: center;
         li {
             margin: 0 10px;
         }
+    }
+
+    .input-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .input-container label {
+        margin: 0;
+        border-radius: 0;
+        padding: 15px 0;
+        box-shadow: none;
+        background: rgba(255,250,240, 0.8);
+        background: $white;
+        border-top: lightgrey 1px solid;
+        border-bottom: lightgrey 1px solid;
+    }
+
+    #qa6 .defuse-question {
+        font-size: 5rem;
+        line-height: 1.4;
     }
 }
 
@@ -245,15 +305,15 @@ ol {
     }
 }
 
-// ** MOST IMPORTANT **
-// RESPONSIVE
-// STYLE MODALS
+@media (max-width: 420px) {
+    ol li {
+        font-size: 1.8rem;
+        margin: 0 5px;
+    }
 
-
-
-
-
-// font-family: 'Erica One', cursive;
-// font-family: 'Goblin One', cursive;
-// font-family: 'Bungee Shade', cursive;
-// font-family: 'Rammetto One', cursive;
+    .question p {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        padding: 0 20px;
+    }
+}
