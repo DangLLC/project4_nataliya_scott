@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="image/ico" href="./favicon/bomb.ico" rel="icon">
     <link href="https://fonts.googleapis.com/css?family=Rammetto+One|Raleway:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
-    <title>BOMB TRIVIA</title>
+    <title>Bomb Dot Com</title>
 </head>
 <body>
     <main>
@@ -36,7 +37,6 @@
             <form action="">
                 <!-- FIELDSET 1 -->
                 <fieldset class="qa-fieldset" id="qa0">
-                    <!-- <p class="number">1</p> -->
                     <div class="question">
                         <p></p>
                     </div>
@@ -46,7 +46,6 @@
                 </fieldset>
                 <!-- FIELDSET 2 -->
                 <fieldset class="qa-fieldset next-q hidden" id="qa1">
-                    <!-- <p class="number">2</p> -->
                     <div class="question">
                         <p></p>
                     </div>
@@ -56,7 +55,6 @@
                 </fieldset>
                 <!-- FIELDSET 3 -->
                 <fieldset class="qa-fieldset next-q hidden" id="qa2">
-                    <!-- <p class="number">3</p> -->
                     <div class="question">
                         <p></p>
                     </div>
@@ -66,7 +64,6 @@
                 </fieldset>
                 <!-- FIELDSET 4 -->
                 <fieldset class="qa-fieldset next-q hidden" id="qa3">
-                    <!-- <p class="number">4</p> -->
                     <div class="question">
                         <p></p>
                     </div>
@@ -76,7 +73,6 @@
                 </fieldset>
                 <!-- FIELDSET 5 -->
                 <fieldset class="qa-fieldset next-q hidden" id="qa4">
-                    <!-- <p class="number">5</p>  -->
                     <div class="question">
                         <p></p>
                     </div>
@@ -84,9 +80,8 @@
                         <!-- answers populated here -->
                     </div>
                 </fieldset>
-                <!-- FIELDSET 6 -->
+                <!-- FIELDSET 6  -->
                 <fieldset class="qa-fieldset next-q hidden" id="qa5">
-                    <!-- <p class="number">6</p> -->
                     <div class="question">
                         <p></p>
                     </div>
@@ -94,8 +89,7 @@
                         <!-- answers populated here -->
                     </div>
                 </fieldset>
-
-
+                <!-- FINAL FIELDSET / WINNING -->
                 <fieldset class="qa-fieldset hidden defuse" id="qa6">
                     <div class="submit">
                         <p class="defuse-question">Defuse bomb?</p>
@@ -106,21 +100,21 @@
                     </div>
                 </fieldset>
             </form>
-            <!-- end form -->  
-            
-            
+            <!-- end form -->   
         </div> 
         <!-- END WRAPPER -->
-        <!-- Comic Shout by Lucas Helle from the Noun Project -->
+
+        <!-- START MODAL -->
         <div class="modal start-modal">
+            <!-- start game instructions content -->
             <div class="modal-content modal-content-start">
-                <!-- categories -->
                 <h1>Bomb dot com</h1>
                 <ul>
                     <li>Answer <span class="boom">6 trivia questions</span> before the timer runs out.</li>
                     <li><span class="boom">5 seconds</span> will be deducted for any wrong answer.</li>
                     <li>Select a category and difficulty. Press start to begin.</li>
                 </ul>
+                <!-- category choices -->
                 <div class="select-container">
                     <div class="select select-category">
                         <label for="category">Category</label>
@@ -144,7 +138,9 @@
                 </div> 
                 <button class="button start-button">Start</button>
             </div>
+            <!-- end game instruction CONTENT -->
         </div>
+        <!-- end modal -->
     </main>
     <!-- END MAIN -->
     <!-- jQuery CDN -->

@@ -1,7 +1,6 @@
 //Form styles
 
 form {
-    // border: 2px solid $white;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -17,7 +16,6 @@ form {
         border: none;
         z-index: 525;
         margin: 0;
-        // border: 2px solid purple;
     }
 }
 
@@ -26,7 +24,6 @@ form {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    // border: 2px green solid;
 }
 
 .question p {
@@ -38,18 +35,18 @@ form {
     letter-spacing: 2px;
     line-height: 1.6;
     text-shadow: 
-    5px 5px $black, 
-    6px 6px $black, 
-    7px 7px $black, 
-    8px 8px $black, 
-    9px 9px $black,
-    10px 10px $black,
-    11px 11px $black,
-    12px 12px $black,
-    13px 13px $black,
-    14px 14px $black,
-    15px 15px $black,
-    16px 16px $accent-color;
+        5px 5px $black, 
+        6px 6px $black, 
+        7px 7px $black, 
+        8px 8px $black, 
+        9px 9px $black,
+        10px 10px $black,
+        11px 11px $black,
+        12px 12px $black,
+        13px 13px $black,
+        14px 14px $black,
+        15px 15px $black,
+        16px 16px $accent-color;
 }
 
 .submit {
@@ -63,7 +60,6 @@ form {
     display: flex;
     width: 40%;
     margin: 5px;
-    // border: 2px solid blue;
     input {
         opacity: 0;
         width: 0;
@@ -91,26 +87,19 @@ form {
 input:focus + label {
     border: 1px solid $black;
 }
-input[type=submit] {
-    border: 5px solid transparent;
-}
 
-input[type=submit]:focus {
-    border: 5px solid orchid;
-}
-
-input[type=submit] {
-    width: 100%;
-    padding: 15px;
-    margin: 0 10px;
-    color: $white;
-    font-weight: bold;
-    border: 2px solid $black;
-    border-radius: 15px;
-    box-shadow: 5px 5px $white;
-    background: transparent;
-    background-color: $black;
-}
+// input[type=submit] {
+//     width: 100%;
+//     padding: 15px;
+//     margin: 0 10px;
+//     color: $white;
+//     font-weight: bold;
+//     border: 2px solid $black;
+//     border-radius: 15px;
+//     box-shadow: 5px 5px $white;
+//     background: transparent;
+//     background-color: $black;
+// }
 
 input[type=radio]:checked+label {
     background: $accent-color;
@@ -123,23 +112,22 @@ form .hidden {
 
 #qa6 {
     z-index: 525;
-    border: 2px solid blue;
     .defuse-question {
         line-height: 1.2;
         margin-bottom: 30px;
         text-shadow: 
-        5px 5px $black, 
-        6px 6px $black, 
-        7px 7px $black, 
-        8px 8px $black, 
-        9px 9px $black,
-        10px 10px $black,
-        11px 11px $black,
-        12px 12px $black,
-        13px 13px $black,
-        14px 14px $black,
-        15px 15px $black,
-        16px 16px $accent-color;
+            5px 5px $black, 
+            6px 6px $black, 
+            7px 7px $black, 
+            8px 8px $black, 
+            9px 9px $black,
+            10px 10px $black,
+            11px 11px $black,
+            12px 12px $black,
+            13px 13px $black,
+            14px 14px $black,
+            15px 15px $black,
+            16px 16px $accent-color;
     }
     .submit {
         display: flex;
@@ -156,6 +144,7 @@ form .hidden {
     z-index: 400;
 }
 
+// question progress bar
 .responsive-bar {
     position: fixed;
     padding-top: 65px;
@@ -163,20 +152,21 @@ form .hidden {
 
 ol {
     font-family: $heading-font;
-    color: $transwhite;
+    color: $trans-white;
     font-size: 2.2rem;
     li {
         margin: 0 10px;
     }
 }
 
+// active question number
 .active-q {
     color: $white;
     text-shadow: 
-    1px 1px $black,
-    2px 2px $black,
-    3px 3px $black,
-    4px 4px $accent-color;
+        1px 1px $black,
+        2px 2px $black,
+        3px 3px $black,
+        4px 4px $accent-color;
 }
 
 
@@ -185,10 +175,9 @@ ol {
     form {
         justify-content: flex-end;
         margin-right: 50px;
-    }
-
-    form .qa-fieldset {
-        padding-top: 25px;
+        .qa-fieldset {
+            padding-top: 25px;
+        }
     }
 
     .question p {
@@ -210,12 +199,12 @@ ol {
     .question p {
         font-size: 2.5rem;
         text-shadow: 
-        1px 1px $black, 
-        2px 2px $black, 
-        3px 3px $black, 
-        4px 4px $black, 
-        5px 5px $black,
-        6px 6px $accent-color,
+            1px 1px $black, 
+            2px 2px $black, 
+            3px 3px $black, 
+            4px 4px $black, 
+            5px 5px $black,
+            6px 6px $accent-color;
     }
 
     .input-container label {
@@ -260,7 +249,6 @@ ol {
         height: 10vh;
         width: 100vw;
         padding: 0 30px;
-        border: 2px solid black;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -270,7 +258,6 @@ ol {
 
     ol {
         display: flex;
-        // align-items: center;
         li {
             margin: 0 10px;
         }
@@ -279,19 +266,18 @@ ol {
     .input-container {
         width: 100%;
         margin: 0;
+        label {
+            margin: 0;
+            border-radius: 0;
+            padding: 15px 0;
+            box-shadow: none;
+            background: rgba(255,250,240, 0.8);
+            background: $white;
+            border-top: lightgrey 1px solid;
+            border-bottom: lightgrey 1px solid;
+        }
     }
-
-    .input-container label {
-        margin: 0;
-        border-radius: 0;
-        padding: 15px 0;
-        box-shadow: none;
-        background: rgba(255,250,240, 0.8);
-        background: $white;
-        border-top: lightgrey 1px solid;
-        border-bottom: lightgrey 1px solid;
-    }
-
+    
     #qa6 .defuse-question {
         font-size: 5rem;
         line-height: 1.4;
