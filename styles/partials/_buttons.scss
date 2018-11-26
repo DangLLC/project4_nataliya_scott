@@ -30,12 +30,38 @@
     border-color: limegreen;
 }
 
+@media (max-width: 475px) {
+    .start-button {
+        height: 45px;
+        border-radius: 0;
+        width: 100vw;
+        border: none;
+        font-size: 2.5rem;
+    }
+
+    .start-button:hover {
+        color: $hover-color;
+    }
+}
+
 @media (max-width: 350px) {
     .button {
         width: 110px;
         height: 110px;
         border: 7px solid $black;
         line-height: 1.2;
+    }
+
+    .start-button {
+        height: 45px;
+        border-radius: 0;
+        width: 100vw;
+        border: none;
+        font-size: 2.5rem;
+    }
+
+    .start-button:hover {
+        color: $hover-color;
     }
 
     .defuse-button, 
