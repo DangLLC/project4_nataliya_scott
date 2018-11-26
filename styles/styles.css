@@ -244,7 +244,8 @@ h2 {
 
 @media (max-width: 420px) {
   h1 {
-    font-size: 3.5rem; }
+    font-size: 3rem;
+    line-height: 1.2; }
   h1, h2 {
     text-shadow: 1px 1px #f9f253, 2px 2px #f9f253, 3px 3px #f9f253, 4px 4px #f9f253, 5px 5px #f9f253, 6px 6px black; } }
 
@@ -931,7 +932,7 @@ select::-ms-expand {
 @media (max-width: 350px) {
   ul {
     font-size: 1.6rem;
-    margin: 25px 0 25px 0; }
+    margin: 10px 0 10px 0; }
   .select label {
     font-size: 1.6rem; }
   select {
@@ -967,12 +968,30 @@ select::-ms-expand {
 .defuse-button {
   border-color: limegreen; }
 
+@media (max-width: 475px) {
+  .start-button {
+    height: 45px;
+    border-radius: 0;
+    width: 100vw;
+    border: none;
+    font-size: 2.5rem; }
+  .start-button:hover {
+    color: #ed1c24; } }
+
 @media (max-width: 350px) {
   .button {
     width: 110px;
     height: 110px;
     border: 7px solid black;
     line-height: 1.2; }
+  .start-button {
+    height: 45px;
+    border-radius: 0;
+    width: 100vw;
+    border: none;
+    font-size: 2.5rem; }
+  .start-button:hover {
+    color: #ed1c24; }
   .defuse-button,
   .explosion-button {
     border-color: #f9f253; } }
