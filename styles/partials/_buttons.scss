@@ -10,8 +10,15 @@
     transition: .3s ease;
 }
 
+.explosion-button {
+    border-color: $hover-color;
+}
 
-.start-button:hover {
+// hovers
+.start-button:hover,
+.play-again-button:hover, 
+.defuse-button:hover, 
+.explosion-button:hover {
     border-color: $hover-color;
 }
 
@@ -19,24 +26,8 @@
     display: flex;
 }
 
-.play-again-button:hover {
-    border-color: $hover-color;
-}
-
 .defuse-button {
     border-color: limegreen;
-}
-
-.explosion-button {
-    border-color: $hover-color;
-}
-
-.defuse-button:hover {
-    border-color: $hover-color;
-}
-
-.explosion-button:hover {
-    border-color: $hover-color;
 }
 
 @media (max-width: 350px) {
@@ -45,10 +36,10 @@
         height: 110px;
         border: 7px solid $black;
         line-height: 1.2;
-        // background: red;
     }
 
-    .defuse-button, .explosion-button {
+    .defuse-button, 
+    .explosion-button {
         border-color: $accent-color;
     }
 }

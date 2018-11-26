@@ -1,5 +1,5 @@
 .modal {
-    width: 80vw;
+    width: 90vw;
     min-height: 90vh;
     padding: 40px 100px;
     background: $white;
@@ -16,8 +16,6 @@
 }
 
 .modal-content {
-    // border: 1px solid red;
-    // padding: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,10 +92,6 @@ select::-ms-expand {
 }
 
 @media (max-width: 775px) {
-    .modal {
-        padding: 20px 50px;
-    }
-
     ul {
         font-size: 1.8rem;
     }
@@ -123,21 +117,15 @@ select::-ms-expand {
     }  
 
     .select label {
-        // margin: 10px;
         width: 100vw;
         padding: 10px 5px;
         font-size: 1.8rem;
-        background: $transaccent;
-        // color: white;
-        // border-top: 5px solid $black;
-        // border-bottom: 5px solid $black;
-        
+        background: $trans-accent;
     }
 
     select {
         border: 0;
         border-radius: 0;
-        // border: 5px solid black;
         border-bottom: 1px solid $black;
         width: 100vw;
         margin: 0;
@@ -155,34 +143,13 @@ select::-ms-expand {
     ul {
         font-size: 1.6rem;
         margin: 25px 0 25px 0;;
-        // li {
-        //     margin: 8px 0;
-        //     font-weight: 600;
-        // }
     }
 
     .select label {
-        // margin: 10px;
-        width: 100vw;
-        padding: 10px 5px;
         font-size: 1.6rem;
-        background: $transaccent;
-        // color: white;
-        // border-top: 5px solid $black;
-        // border-bottom: 5px solid $black;
-        
     }
 
     select {
         font-size: 1.6rem;
-        border: 0;
-        border-radius: 0;
-        // border: 5px solid black;
-        border-bottom: 1px solid $black;
-        width: 100vw;
-        margin: 0;
-        &:hover {
-            border-color: $black;
-        }
     }
 }
